@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="registrarse.css">
+    <title>Registrarse</title>
+</head>
+<body>
+    <div class="flex">
+        <div class="w-25 border img-logo bcolor">
+            <img src="comida/logo.jpg" width="100px">
+        </div>
+        <div class="w-75 border bcolor">
+            <ul class="menu"><a href=""></a>
+                <li><a href="index.html"><button>Inicio</button></a></li>
+                <li><a href="menu.html"><button>Menu</button></a></li>
+                <li><a href="promos.html"><button>Promos</button></a></li>
+                <li><a href="galeria.html"><button>Galeria</button></a></li>
+                <li><a href="contacto.html"><button>Contacto</button></a></li>
+                <li><a href="carrito.html"><button>Carrito</button></a></li>
+            </ul>
+        </div>
+        <div class="border loggin bcolor">
+            <label><a href="login.html">Iniciar Sesion</a></label>
+            <label><a href="registrarse.html">Registrarse</a></label>
+        </div>
+    </div>
+    <div>
+        <h1 style="text-align: center;"> Registrarse </h1>
+    </div>
+    
+    <hr style="width:100%;text-align:left;margin-left:0">
+
+    <!-- PARA REGISTRARSE -->
+    <form>
+        <div class="container">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="elpanal@correo.com" name="email" id="email" required>
+        
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Contraseña" name="psw" id="psw" required>
+        
+            <label for="psw-repeat"><b>Repetir Contraseña</b></label>
+            <input type="password" placeholder="Repetir Contraseña" name="psw-repeat" id="psw-repeat" required>
+            <hr>
+
+            <button type="submit" onclick="registrarse()" class="registerbtn">Registrarse</button>
+        </div>
+        <div class="container signin">
+            <p>Tienes una cuenta? <a href="login.html">Entrar</a>.</p>
+        </div>
+    </form>
+    <script src="registrarse.js"></script>
+</body>
+</html>
