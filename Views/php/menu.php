@@ -4,30 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="/proyecto/Views/css/style.css">
+    <link rel="stylesheet" href="/proyecto/Views/css/menu.css">
     <title>Menu - El Panal</title>
 </head>
 <body>
-    <div class="flex">
-        <div class="w-25 border img-logo bcolor">
-            <img src="comida/logo.jpg" width="100px">
-        </div>
-        <div class="w-75 border bcolor">
-            <ul class="menu"><a href=""></a>
-                <li><a href="index.html"><button>Inicio</button></a></li>
-                <li><a href="menu.html"><button>Menu</button></a></li>
-                <li><a href="promos.html"><button>Promos</button></a></li>
-                <li><a href="galeria.html"><button>Galeria</button></a></li>
-                <li><a href="contacto.html"><button>Contacto</button></a></li>
-                <li><a href="carrito.html"><button>Carrito</button></a></li>
-            </ul>
-        </div>
-        <div class="border loggin bcolor">
-            <label><a href="login.html">Iniciar Sesion</a></label>
-            <label><a href="registrarse.html">Registrarse</a></label>
-        </div>
-    </div>
+    
+    <?php include('header.php') ?>
+
     <div>
         <h1 style="text-align: center;"> Menú </h1>
     </div>
@@ -62,6 +46,6 @@
 							
 	</section>
 
-    <script src="app.js"></script>
+    <script src="/proyecto/Views/js/app.js"></script>
 </body>
 </html>

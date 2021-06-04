@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/proyecto/Views/css/style.css">
+    <link rel="stylesheet" href="/proyecto/Views/css/galeria.css">
+    <title>Galeria - El Panal</title>
+</head>
+<body>
+    
+    <?php include('header.php') ?>
+
+    <div>
+        <h1 style="text-align: center;"> Galeria </h1>
+    </div>
+    <hr style="width:100%;text-align:left;margin-left:0">
+
+    <div class="header" id="myHeader">
+        <button class="btn" onclick="one()">1</button>
+        <button class="btn active" onclick="two()">2</button>
+        <button class="btn" onclick="four()">4</button>
+      </div>
+      
+      <!-- VER IMAGENES -->
+      <div class="row"> 
+        <div class="column">
+            <img src="/proyecto/Views/images/comida/Carnitas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mariposas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Tacos.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta1.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mensaje.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Taco_Marco.jpg" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="/proyecto/Views/images/comida/Carnitas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mariposas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Tacos.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta1.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mensaje.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Taco_Marco.jpg" style="width:100%">
+        </div>  
+        <div class="column">
+            <img src="/proyecto/Views/images/comida/Carnitas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mariposas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Tacos.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta1.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mensaje.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Taco_Marco.jpg" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="/proyecto/Views/images/comida/Carnitas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mariposas.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Tacos.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Torta1.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Mensaje.jpg" style="width:100%">
+            <img src="/proyecto/Views/images/comida/Taco_Marco.jpg" style="width:100%">
+        </div>
+      </div>
+      
+      <script src="/proyecto/Views/js/galeria.js"></script>
+</body>
+</html>
