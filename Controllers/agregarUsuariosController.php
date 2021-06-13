@@ -11,6 +11,8 @@ try {
     $connection = DB::getConnection();
 }
 catch(PDOException $e) {
+    echo "ERROR EN LA CONEXION DE BASE DE DATOS";
+
     error_log("Connection error - " . $e, 0);
 
     $response = new Response();
@@ -24,10 +26,12 @@ catch(PDOException $e) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $contrasena = $_POST["password"];
+    $rol = 2;
 
-    $query = $connection->prepare('INSERT INTO usuarios VALUES(NULL, :email, :contrasena)');
+    $query = $connection->prepare('INSERT INTO usuarios VALUES(NULL, :email, :contrasena, :rol)');
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':contrasena', $contrasena, PDO::PARAM_STR);
+    $query->bindParam(':rol', $rol, PDO::PARAM_STR);
     $query->execute();
     
     $rowCount = $query->rowCount();

@@ -3,6 +3,15 @@
     mysqli_set_charset($connection, "utf8");
 
     $usuarios = "SELECT * FROM usuarios";
+
+    session_start();
+    if(!isset($_SESSION['rol'])){
+        header('location: login.php');
+    }else{
+        if($_SESSION['rol'] != 1){
+            header('location: login.php');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +43,10 @@
     ?>
 
     <div>
-        <h1 style="text-align: center;"> Usuarios Registrados </h1>
+        <h1 style="text-align: center;"> Panel de Administración </h1>
+        <!-- <h2 style="text-align: center;">Bienvendio: <?php echo $_SESSION['usuario']; ?> </h2> -->
     </div>
     <hr style="width:100%;text-align:left;margin-left:0">
-
     <br>
 
     <div class="tabla-usuarios">
@@ -46,6 +55,7 @@
                 <th>id</th>
                 <th>Correo</th>
                 <th>Contraseña</th>
+                <th>Rol</th>
                 <th>Eliminar</th>
             </tr>
 
@@ -57,6 +67,7 @@
                     <td> <?php echo $row["id"] ?> </td>
                     <td> <?php echo $row["email"]?> </td>
                     <td> <?php echo $row["contrasena"]?> </td>
+                    <td> <?php echo $row["rol"]?> </td>
 
                     <td> 
                         <form method="POST" id="form_eliminar_<?php echo $row['id']; ?>" action="/proyecto/Views/php/admin.php">

@@ -1,34 +1,52 @@
 <?php
-    // $email = $_POST["email"];
-    // $password = $_POST["password"];
-    
-    // $error = "";
-    // $success = "";
-    // $msg = "";
+    include('../../Models/db.php');
+    session_start();
 
-    // $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+    if(isset($_GET['cerrar_sesion'])){
+        session_unset();
+        session_destroy();
+    }
+    if(isset($_SESSION['rol'])){
+        switch($_SESSION['rol']){
+            case 1:
+                header('location: /proyecto/Views/php/admin.php');
+                break;
+            case 2:
+                header('location: /proyecto/index.php');
+                break;
+            default:
+        }
+    }
+    if(isset($_POST['email']) && isset($_POST['password'])){
+        $email = $_POST['email'];
+        $contrasena = $_POST['password'];
 
-    // $connection = mysqli_connect("localhost","root","qwert","panal_db");
-    // if(!$connection){ $error = "Error al conectar a la base de datos"; }
+        $db = new DB();
+        $query = $db->getConnection()->prepare('SELECT * FROM usuarios WHERE email = :email AND contrasena = :contrasena');
+        $query->execute(['email' => $email, 'contrasena' => $contrasena]);
 
-    // $result = mysqli_query($connection, $sql);
-    // $row = mysqli_fetch_array($result);
-    
-    // if($row){
-    //     if($row["contrasena"] == $password){
-    //         $error = "";
-    //         $success = "Bienvendio ".$email;
-    //         $msg = "Logout";
-    //     } else {
-    //         $error = "Contraseña Incorrecta";
-    //         $success = "";
-    //         $msg = "Intenta de nuevo";
-    //     }
-    // } else {
-    //     $error = "Correo Invalido";
-    //     $success = "";
-    //     $msg = "Intena de nuevo";
-    // }
+        $row = $query->fetch(PDO::FETCH_NUM);
+
+        if($row == true){
+            $rol = $row[3];
+            $_SESSION['rol'] = $rol;
+
+            switch($_SESSION['rol']){
+                case 1:
+                    header('location: /proyecto/Views/php/admin.php');
+                    break;
+                case 2:
+                    header('location: /proyecto/index.php');
+                    break;
+                default:
+            }
+        } else {
+            echo
+                '<script>
+                alert("Usuario o contraseña incorrecto");
+                </script>';
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +68,9 @@
     </div>
     
     <hr style="width:100%;text-align:left;margin-left:0">
-
-    <!-- <p class="error"> <?php echo $error; ?> </p> 
-    <p class="success"> <?php echo $success; ?> </p> -->
     
     <!-- PARA LOGEARSE -->
-    <form method="POST" id="form_login"> 
+    <form method="POST" id="form_login" action="#"> 
         <div class="container">
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>
@@ -63,14 +78,15 @@
             <label for="password"><b>Contraseña</b></label>
             <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
 
-            <button type="submit" class="registerbtn">Iniciar Sesion</button>
+            <input type="submit" class="registerbtn" value="Iniciar Sesión">
         </div>
-      
+
         <div class="container signin">
             <p>No tienes una cuenta? <a href="registrarse.php">Registrarse</a>.</p>
         </div>
     </form>
-    <script src="/proyecto/Views/js/registrarse.js"></script>
+
+    <!-- <script src="/proyecto/Views/js/registrarse.js"></script>
     <script>
         var form = document.getElementById("form_login");
 
@@ -115,6 +131,6 @@
 
             xhttp.send(JSON.stringify(json));
         }
-    </script>
+    </script> -->
 </body>
 </html>

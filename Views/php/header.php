@@ -15,5 +15,7 @@
     <div class="border loggin bcolor">
         <label><a href="/proyecto/Views/php/login.php">Iniciar Sesion</a></label>
         <label><a href="/proyecto/Views/php/registrarse.php">Registrarse</a></label>
+        <br>
+        <label><a href="/proyecto/Views/php/login.php?cerrar_sesion">Cerrar Sesion</a></label>
     </div>
 </div>
