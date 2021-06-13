@@ -1,12 +1,3 @@
-<!--
-    TODO LIST:
-        PARTE DEL ADMINISTRADOR
-        LOGEARSE Y CHECAR SI ES ADMIN
-        SESIONES
-
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
