@@ -73,7 +73,8 @@ button {
     background-color: #ffff72;
 }
 
-@media screen and (max-width: 935px) {
+/* 935 NORMAL */
+@media  (max-width: 1203px) { 
     .img-logo { display: none; }
     
     .w-25 { width: 25%; }
@@ -86,6 +87,10 @@ button {
 
     .img-principal {
         margin: 5px;
+    }
+    
+    .img-principal-menu {
+        margin: 0px;
     }
 
     .loggin { width: 25%; }
