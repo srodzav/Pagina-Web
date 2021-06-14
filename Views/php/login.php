@@ -9,10 +9,10 @@
     if(isset($_SESSION['rol'])){
         switch($_SESSION['rol']){
             case 1:
-                header('location: /proyecto/Views/php/admin.php');
+                header('location: /PROYECTO/Views/php/admin.php');
                 break;
             case 2:
-                header('location: /proyecto/index.php');
+                header('location: /PROYECTO/index.php');
                 break;
             default:
         }
@@ -33,10 +33,10 @@
 
             switch($_SESSION['rol']){
                 case 1:
-                    header('location: /proyecto/Views/php/admin.php');
+                    header('location: /PROYECTO/Views/php/admin.php');
                     break;
                 case 2:
-                    header('location: /proyecto/index.php');
+                    header('location: /PROYECTO/index.php');
                     break;
                 default:
             }
@@ -55,8 +55,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/proyecto/Views/css/style.css">
-    <link rel="stylesheet" href="/proyecto/Views/css/registrarse.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/registrarse.css">
     <title>Iniciar Sesion</title>
 </head>
 <body>

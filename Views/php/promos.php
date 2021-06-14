@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/proyecto/Views/css/style.css">
-    <link rel="stylesheet" href="/proyecto/Views/css/promos.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/promos.css">
     <title>Promos - El Panal</title>
 </head>
 <body>
@@ -20,10 +20,10 @@
     <div class="flex bcolor2">
         <div class="flex border justify-space w-100">
             <ul>
-                <li><img src="/proyecto/Views/images/comida/Promo1.jpg" width="400px" class="img-principal"></li>
-                <li><img src="/proyecto/Views/images/comida/Promo2.jpg" width="400px" class="img-principal"></li>
-                <li><img src="/proyecto/Views/images/comida/Promo3.PNG" width="400px" class="img-principal"></li>
-                <li><img src="/proyecto/Views/images/comida/Promo4.PNG" width="400px" class="img-principal"></li>
+                <li><img src="/PROYECTO/Views/images/comida/Promo1.jpg" width="400px" class="img-principal"></li>
+                <li><img src="/PROYECTO/Views/images/comida/Promo2.jpg" width="400px" class="img-principal"></li>
+                <li><img src="/PROYECTO/Views/images/comida/Promo3.PNG" width="400px" class="img-principal"></li>
+                <li><img src="/PROYECTO/Views/images/comida/Promo4.PNG" width="400px" class="img-principal"></li>
         </div>
     </div>
     <hr style="width:100%;text-align:left;margin-left:0">

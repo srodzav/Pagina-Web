@@ -20,8 +20,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/proyecto/Views/css/style.css">
-    <link rel="stylesheet" href="/proyecto/Views/css/admin.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/admin.css">
     <title>Admin - El Panal</title>
 </head>
 <body>
@@ -67,7 +67,14 @@
                     <td> <?php echo $row["id"] ?> </td>
                     <td> <?php echo $row["email"]?> </td>
                     <td> <?php echo $row["contrasena"]?> </td>
-                    <td> <?php echo $row["rol"]?> </td>
+                    <td> 
+                        <?php
+                            if($row["rol"] == 1)
+                                echo "Administrador";
+                            else
+                                echo "Usuario";
+                        ?>
+                    </td>
 
                     <td> 
                         <form method="POST" id="form_eliminar_<?php echo $row['id']; ?>" action="/proyecto/Views/php/admin.php">

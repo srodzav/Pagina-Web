@@ -38,13 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($rowCount == 0) {
         //header("Location: http://localhost/proyecto/Views/php/registrarse/?error=No se pudo registrar el usuario");
-        header("Location: http://localhost/proyecto/index.php/?error=No se pudo registrar el usuario");
+        header("Location: http://localhost/PROYECTO/index.php/?error=No se pudo registrar el usuario");
 
 
         exit();
     }
 
     //header("Location: http://localhost/proyecto/Views/php/registrarse/");
-    header("Location: http://localhost/proyecto/index.php");
+    header("Location: http://localhost/PROYECTO/index.php");
     exit();
 }

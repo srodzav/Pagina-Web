@@ -1,9 +1,26 @@
 .tabla-usuarios {
-    width: 500px;
-    height: 500px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size:  0.9em;
+    width: 600px;
+    height: 600px;
     margin: 80px auto;
-    background: #FFFFFF;
     display: flex;
     flex-direction: column;
 }
 
+.tabla-usuarios th {
+    background-color: rgb(255, 123, 0);
+    text-align: left;
+    font-weight: bold;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td{
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.tabla-usuarios td:nth-of-type(even) {
+    background-color: #f3f3f3;
+}

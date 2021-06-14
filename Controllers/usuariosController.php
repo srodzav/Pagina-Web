@@ -2,9 +2,9 @@
 
 echo "ENTRO A USUARIOS CONTROLLER";
 
-require_once("/proyecto/Models/db.php");
-require_once("/proyecto/Models/Usuario.php");
-require_once("/proyecto/Models/Response.php");
+require_once("/PROYECTO/Models/db.php");
+require_once("/PROYECTO/Models/Usuario.php");
+require_once("/PROYECTO/Models/Response.php");
 
 try {
     $connection = DB::getConnection();

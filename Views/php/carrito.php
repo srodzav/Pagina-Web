@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/proyecto/Views/css/style.css">
-    <link rel="stylesheet" href="/proyecto/Views/css/carrito.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/carrito.css">
     <title>Carrito - El Panal</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
         <!-- #1 -->
         <div class="item">
             <div class="image">
-                <img src="/proyecto/Views/images/comida/Tacos.jpg" width="100"/>
+                <img src="/PROYECTO/Views/images/comida/Tacos.jpg" width="100"/>
             </div>
             <div class="description">
                 <span>Orden de Tacos</span>
@@ -33,7 +33,7 @@
         <!-- #2 -->
         <div class="item">
             <div class="image">
-                <img src="/proyecto/Views/images/comida/Torta_Marco.jpg" width="100"/>
+                <img src="/PROYECTO/Views/images/comida/Torta_Marco.jpg" width="100"/>
             </div>
             <div class="description">
                 <span>Torta</span>
@@ -44,7 +44,7 @@
         <!-- #3 -->
         <div class="item">
             <div class="image">
-                <img src="/proyecto/Views/images/comida/Michelada_Marco.jpg" width="100"/>
+                <img src="/PROYECTO/Views/images/comida/Michelada_Marco.jpg" width="100"/>
             </div>
             <div class="description">
                 <span>Michelada</span>
@@ -55,7 +55,7 @@
         <!-- #4 -->
         <div class="item">
             <div class="image">
-                <img src="/proyecto/Views/images/comida/Taco_Marco.jpg" width="100"/>
+                <img src="/PROYECTO/Views/images/comida/Taco_Marco.jpg" width="100"/>
             </div>
             <div class="description">
                 <span>Taco</span>
@@ -64,7 +64,7 @@
             <div class="total-price">$40</div>
         </div>
     </div>
-    <script src="/proyecto/Views/js/app.js"></script>
-    <script src="/proyecto/Views/js/carrito.js"></script>
+    <script src="/PROYECTO/Views/js/app.js"></script>
+    <script src="/PROYECTO/Views/js/carrito.js"></script>
 </body>
 </html>
