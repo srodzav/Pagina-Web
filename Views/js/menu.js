@@ -188,11 +188,12 @@ function sub(id)
   var txtPrecio = document.getElementById(`precio_${id}`);
   var newPrecio;
   var tmp = document.getElementById(`nombre_${id}`);
-
-    if(tmp.value > 0){
+    
+  console.log(txtPrecio.value);
+    if(txtPrecio.value > 0){
         switch(tmp.value){
         case 'Torta':
-            vnewPrecio = parseInt(txtPrecio.value) - 55;
+            newPrecio = parseInt(txtPrecio.value) - 55;
             break;
         case 'Taco':
             newPrecio = parseInt(txtPrecio.value) - 20;

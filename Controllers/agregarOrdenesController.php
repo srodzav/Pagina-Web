@@ -23,17 +23,27 @@ catch(PDOException $e) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
-    $cantidad = $_POST["cantidad"];
-    $precio = $_POST["precio"];
+    for ($i = 0; $i < count($_POST['nombre']); $i++){
+        $nombre = $_POST['nombre'][$i];
+        $cantidad = $_POST['cantidad'][$i];
+        $precio = $_POST['precio'][$i];
 
-    $rows = array($nombre, $cantidad, $precio);
-    $stmt = $connection->prepare("INSERT INTO ordenes(id, nombre, cantidad, precio) VALUES (NULL, :nombre, :cantidad, :precio)");
-    foreach($rows as $key => $value){
-        $stmt->bindParam($key, $value);
-        
+        $sql = 'INSERT INTO ordenes(nombre,cantidad,precio) VALUES(:nombre, :cantidad, :precio)';
+        $query = $connection->prepare($sql);
+        $query->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+        $query->bindParam(':cantidad', $cantidad, PDO::PARAM_STR);
+        $query->bindParam(':precio', $precio, PDO::PARAM_STR);
+        $query->execute();
     }
-    $stmt->execute();
+    $rowCount = $query->rowCount();
+
+    if ($rowCount == 0) {
+        header("Location: http://localhost/PROYECTO/index.php/?error=No se pudo hacer el pago");
+        exit();
+    }
+    header("Location: http://localhost/PROYECTO/index.php");
+    // header("Location: http://localhost/PROYECTO/Views/compra.php");
+    exit();
 }
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
