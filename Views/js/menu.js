@@ -1,15 +1,19 @@
 const carrito = document.getElementById("carrito");
 
+var cont = 0;
+
 function addCarrito(x){
+
     console.log(x);
+
     switch(x){
         case 1: // TORTA
-            carrito.innerHTML += 
+            carrito.innerHTML +=
             `
-            <div class="item">
+            <div class="item" id="item_${cont}">
                 <div class="buttons">
-                    <span class="delete-btn"></span>
-                    <span class="like-btn"></span>
+                    <button class="delete-btn" onclick="deleteItem('item_${cont}')"></button>
+                    <span class="like-btn is-active"></span>
                 </div>
                 <div class="image">
                     <img src="../images/comida/Torta_128.jpg" alt="" />
@@ -25,15 +29,16 @@ function addCarrito(x){
                 <div class="total-price">$55</div>
             </div>
             `;
+            cont++;
             break;
 
         case 2: // TACO
-            carrito.innerHTML += 
+            carrito.innerHTML +=
             `
-            <div class="item">
+            <div class="item" id="item_${cont}">
                 <div class="buttons">
-                    <span class="delete-btn"></span>
-                    <span class="like-btn"></span>
+                    <button class="delete-btn" onclick="deleteItem('item_${cont}')"></button>
+                    <span class="like-btn is-active"></span>
                 </div>
                 <div class="image">
                     <img src="../images/comida/Taco_128.jpg" alt="" />
@@ -49,15 +54,16 @@ function addCarrito(x){
                 <div class="total-price">$20</div>
             </div>
             `;
+            cont++;
             break;
 
         case 3: // TACOS DORADOS
             carrito.innerHTML += 
             `
-            <div class="item">
+            <div class="item"  id="item_${cont}">
                 <div class="buttons">
-                    <span class="delete-btn"></span>
-                    <span class="like-btn"></span>
+                    <button class="delete-btn" onclick="deleteItem('item_${cont}')"></button>
+                    <span class="like-btn is-active"></span>
                 </div>
                 <div class="image">
                     <img src="../images/comida/Tacos_128.jpg" alt="" />
@@ -73,15 +79,16 @@ function addCarrito(x){
                 <div class="total-price">$40</div>
             </div>
             `;
+            cont++;
             break;
 
         case 4: // GORDITAS
-            carrito.innerHTML += 
+            carrito.innerHTML +=
             `
-            <div class="item">
+            <div class="item"  id="item_${cont}">
                 <div class="buttons">
-                    <span class="delete-btn"></span>
-                    <span class="like-btn"></span>
+                    <button class="delete-btn" onclick="deleteItem('item_${cont}')"></button>
+                    <span class="like-btn  is-active"></span>
                 </div>
                 <div class="image">
                     <img src="../images/comida/Gordita_128.jpg" alt="" />
@@ -97,12 +104,22 @@ function addCarrito(x){
                 <div class="total-price">$30</div>
             </div>
             `;
+            cont++;
             break;
 
         default:
     }
 }
 
+function deleteItem(id){
+    var item = document.getElementById(id);
+
+    item.remove();
+}
+
+function print(){
+    console.log("SI JALA");
+}
 // switch(x){
 //     case 1: // TORTA
 //         carrito.innerHTML += 
