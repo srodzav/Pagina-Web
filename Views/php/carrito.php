@@ -30,18 +30,12 @@
             <div class="description">
                 <span>Orden de Tacos</span>
                 <span>5 tacos</span>
-                <span>White</span>
             </div>
             <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
-                    <img src="../images/plus.svg" alt="" />
-                </button>
+                <span>Cantidad</span>
                 <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
-                    <img src="../images/minus.svg" alt="" />
-                </button>
             </div>
-            <div class="total-price">$20</div>
+            <div class="total-price">$40</div>
         </div>
         <!-- Product #2 -->
         <div class="item">
@@ -55,18 +49,12 @@
             <div class="description">
                 <span>Torta</span>
                 <span>Torta de maciza</span>
-                <span>White</span>
             </div>
             <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
-                    <img src="../images/plus.svg" alt="" />
-                </button>
+                <span>Cantidad</span>
                 <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
-                    <img src="../images/minus.svg" alt="" />
-                </button>
             </div>
-            <div class="total-price">$44</div>
+            <div class="total-price">$55</div>
         </div>
         <!-- Product #3 -->
         <div class="item">
@@ -78,20 +66,14 @@
                 <img src="../images/comida/prueba.jpg" alt="" />
             </div>
             <div class="description">
-                <span>Michelada</span>
-                <span>XX Lager</span>
-                <span>Brown</span>
+                <span>Gordita</span>
+                <span>Gordita de Maciza</span>
             </div>
             <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
-                    <img src="../images/plus.svg" alt="" />
-                </button>
+                <span>Cantidad</span>
                 <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
-                    <img src="../images/minus.svg" alt="" />
-                </button>
             </div>
-            <div class="total-price">$39</div>
+            <div class="total-price">$30</div>
         </div>
     </div>
 
@@ -141,7 +123,40 @@
             <div class="total-price">$40</div>
         </div>
     </div> -->
-    <script src="/PROYECTO/Views/js/app.js"></script>
-    <script src="/PROYECTO/Views/js/carrito.js"></script>
+    
+    <!-- <script type="text/javascript">
+        var minus = document.getElementById("minus-btn");
+        var plus = document.getElementById("plus-btn");
+
+        minus.on('click', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            var $input = $this.closest('div').find('input');
+            var value = parseInt($input.val());
+            if (value > 1) {
+                value = value - 1;
+            } else {
+                value = 0;
+            }
+            $input.val(value);
+        });
+
+        plus.on('click', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            var $input = $this.closest('div').find('input');
+            var value = parseInt($input.val());
+            if (value < 100) {
+                value = value + 1;
+            } else {
+                value =100;
+            }
+            $input.val(value);
+        });
+
+        $('.like-btn').on('click', function() {
+            $(this).toggleClass('is-active');
+        });
+    </script> -->
 </body>
 </html>
