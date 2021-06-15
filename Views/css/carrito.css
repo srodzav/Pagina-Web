@@ -155,7 +155,15 @@ input:focus {
   color: #43484D;
   font-weight: 300;
 }
-
+.total-price input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
 /* Responsive */
 @media (max-width: 800px) {
   .shopping-cart {
