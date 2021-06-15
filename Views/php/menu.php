@@ -20,8 +20,8 @@
     </div>
     
     <hr style="width:100%;text-align:left;margin-left:0">
-    <div class="flex">
-        <div class="w-50">
+    <div class="container">
+        <div class="w-50 obj">
             <section id="our_menu" class="bcolor2">
                 <div class="single_menu bcolor3">
                     <div class="menu_content">
@@ -59,11 +59,20 @@
                         <button class="boton-carrito" onClick="addCarrito(4)">Añadir al carrito</button>
                     </div>
                 </div>
+                <div class="single_menu bcolor3">
+                    <div class="menu_content">
+                        <h4>Michelada  <span>$39.00 c/u</span></h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem eos exercitationem quaerat nostrum ab eius quam quas accusantium sequi? Aspernatur, repellendus? Tempore accusamus quas id repudiandae, sint atque asperiores facere?</p>
+                        <img src="../images/comida/Michelada_Marco.jpg">
+                        <br>
+                        <button class="boton-carrito" onClick="addCarrito(5)">Añadir al carrito</button>
+                    </div>
+                </div>
             </section>
         </div>
-        <div class="w-50">
+        <div class="w-50 obj">
             <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarOrdenesController.php">
-                <button type="submit" class="ordernarbtn">¡Ordenar!</button>
+                <button type="submit" class="ordernarbtn"> ¡Ordenar! </button>
                 <div class="shopping-cart" id="carrito">
                     <!-- SE AÑADEN LOS ITEMS -->
                 </div>

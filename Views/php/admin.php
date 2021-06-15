@@ -44,7 +44,6 @@
 
     <div>
         <h1 style="text-align: center;"> Panel de Administración </h1>
-        <!-- <h2 style="text-align: center;">Bienvendio: <?php echo $_SESSION['usuario']; ?> </h2> -->
     </div>
     <hr style="width:100%;text-align:left;margin-left:0">
     <br>
@@ -105,8 +104,39 @@
                 <button type="submit" class="registerbtn">Añadir</button>
             </div>
         </form>
-
     </div>
+    <br><br>
+    <div>
+        <div>
+            <h3 style="text-align: center;"> Ultimos Pedidos </h3>
+        </div>
+        <hr style="width:100%;text-align:left;margin-left:0">
+        <br>
+
+        <?php $compras = "SELECT * FROM ordenes ORDER BY id DESC"; ?>
+        <div class="tabla-pedidos">
+            <table >
+                <tr>
+                    <th>N° Pedido</th>
+                    <th>Platillo</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+
+                <?php $resultado = mysqli_query($connection, $compras); 
+
+                while($row=mysqli_fetch_assoc($resultado))
+                { ?>
+                    <tr>
+                        <td> <?php echo $row["id"] ?> </td>
+                        <td> <?php echo $row["nombre"] ?> </td>
+                        <td> <?php echo $row["cantidad"]?> </td>
+                        <td> $<?php echo $row["precio"]?> </td>
+                        
+                    </tr>
+                <?php } mysqli_free_result($resultado); ?>
+            </table>
+        </div>
     </div>
 </body>
 </html>

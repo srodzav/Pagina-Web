@@ -12,24 +12,24 @@
     <?php include('Views/php/header.php') ?>
 
     <div class="flex border justify-space bcolor2">
-        <ul>
-            <li><img src="Views/images/comida/Torta_Marco.jpg" width="320px" class="img-principal"></li>
-            <li><img src="Views/images/comida/Taco_Marco.jpg" width="320px" class="img-principal"></li>
-            <li><img src="Views/images/comida/Tacos.jpg" width="320px" class="img-principal"></li>
-            <li><img src="Views/images/comida/Torta.jpg" width="320px" class="img-principal"></li>
-            <li><img src="Views/images/comida/Torta_Marco.jpg" width="320px" class="img-principal"></li>
+        <ul class="ul-main">
+            <li class="li-main"><img src="Views/images/comida/Torta_Marco.jpg"  class="img-principal"></li>
+            <li class="li-main"><img src="Views/images/comida/Taco_Marco.jpg"  class="img-principal"></li>
+            <li class="li-main"><img src="Views/images/comida/Tacos.jpg" class="img-principal"></li>
+            <li class="li-main"><img src="Views/images/comida/Torta.jpg"  class="img-principal"></li>
+            <li class="li-main"><img src="Views/images/comida/Torta_Marco.jpg"  class="img-principal"></li>
         </ul>
     </div>
 
     <hr style="width:100%;text-align:left;margin-left:0">
 
     <div class="flex border justify-space bcolor3">
-        <ul>
-            <li><img src="Views/images/comida/Reyna.jpg" width="300px" class="img-principal-menu"></li>
-            <li><img src="Views/images/comida/1.Banner.jpg" width="300px" class="img-principal-menu"></li>
-            <li><img src="Views/images/comida/2.Banner.jpg" width="300px" class="img-principal-menu"></li>
-            <li><img src="Views/images/comida/3.Banner.jpg" width="300px" class="img-principal-menu"></li>
-            <li><img src="Views/images/comida/Vista.jpg" width="300px" class="img-principal-menu"></li>
+        <ul class="ul-main">
+            <li class="li-main"><img src="Views/images/comida/Reyna.jpg"  class="img-principal-menu"></li>
+            <li class="li-main"><img src="Views/images/comida/1.Banner.jpg"  class="img-principal-menu"></li>
+            <li class="li-main"><img src="Views/images/comida/2.Banner.jpg"  class="img-principal-menu"></li>
+            <li class="li-main"><img src="Views/images/comida/3.Banner.jpg"  class="img-principal-menu"></li>
+            <li class="li-main"><img src="Views/images/comida/Vista.jpg"  class="img-principal-menu"></li>
         </ul>
     </div>
 

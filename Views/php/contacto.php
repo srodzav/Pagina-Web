@@ -22,10 +22,10 @@
     <div class="container">
         <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarComentarioController.php">
             <label for="fname">Nombre</label>
-            <input type="text" id="fname" name="firstname" placeholder="Tu Nombre..">
+            <input type="text" id="fname" name="firstname" placeholder="Tu Nombre.." autocomplete="off" required>
         
             <label for="email">Correo Electronico</label>
-            <input type="text" id="email" name="email" placeholder="Tu correo electronico..">
+            <input type="text" id="email" name="email" placeholder="Tu correo electronico.." autocomplete="off" required>
         
             <label for="message">Mensaje</label>
             <textarea id="message" name="message" placeholder="Escribe tu duda..." style="height:200px"></textarea>
@@ -40,11 +40,21 @@
         
     <br>
     <br>
+        
+    <?php
+        if(isset($_POST['eliminar']))
+        {
+            $id = $_POST['eliminar'];
 
-    <div>
-        <h3 style="text-align: center;"> Bandeja de entrada </h3>
-    </div>
-    <hr style="width:100%;text-align:left;margin-left:0">
+            $sql = "DELETE FROM mensaje WHERE id = $id";
+
+            if($connection->query($sql) === true){
+                //echo "LOGRADO JEFE";
+            }else {
+                die("Error al actualizar datos: " . $connection->error);
+            }
+        }
+    ?>
 
     <?php
         $connection = mysqli_connect('localhost', 'root', 'qwert', 'panal_db');
@@ -52,12 +62,19 @@
 
         $mensaje = "SELECT * FROM mensaje";
 
-        session_start();
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
         if(!isset($_SESSION['rol'])){
             header('location: login.php');
         }else{
             if($_SESSION['rol'] == 1){
                 ?>
+                <div>
+                    <h3 style="text-align: center;"> Bandeja de entrada </h3>
+                </div>
+                <hr style="width:100%;text-align:left;margin-left:0">
                 <div class="tabla-usuarios">
                     <table>
                         <tr>
@@ -78,7 +95,7 @@
                                 <td> <?php echo $row["message"]?> </td>
 
                                 <td> 
-                                    <form method="POST" id="form_eliminar_<?php echo $row['id']; ?>" action="/PROYECTO/Views/php/contact.php">
+                                    <form method="POST" id="form_eliminar_<?php echo $row['id']; ?>" action="/PROYECTO/Views/php/contacto.php">
                                         <input type="hidden" name="eliminar" value="<?php echo $row['id']; ?> "> 
                                         <input type="submit" value="X"> 
                                     </form>
