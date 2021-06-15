@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/PROYECTO/Views/css/menu.css">
     <link rel="stylesheet" href="/PROYECTO/Views/css/carrito.css">
     <title>Menu - El Panal</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
 </head>
 <body>
     
@@ -69,11 +71,6 @@
         </div>
     </div>
     <script src="/PROYECTO/Views/js/app.js"></script>
-    <script src="/PROYECTO/Views/js/menu.js"></script>
-    <?php
-
-
-
-    ?>
+    <script type="text/javascript" src="/PROYECTO/Views/js/menu.js"></script>
 </body>
 </html>
