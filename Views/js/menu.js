@@ -19,14 +19,21 @@ function addCarrito(x){
                     <img src="../images/comida/Torta_128.jpg" alt="" />
                 </div>
                 <div class="description">
-                    <input type="text" name="nombre" id="email" autocomplete="off" value="Torta" required>
+                    <input type="text" name="nombre[]" id="nombre_${cont}" autocomplete="off" value="Torta" required>
                     <span>Torta de maciza</span>
                 </div>
                 <div class="quantity">
-                    <span>Cantidad</span>
-                    <input type="text" name="cantidad" id="cantidad" autocomplete="off" value="1" required>
+                    <button class="plus-btn" type="button" name="button" onclick="add(${cont});">
+                        <img src="../images/plus.svg" alt="" />
+                    </button>
+
+                    <input type="text" name="cantidad[]" id="cantidad_${cont}" autocomplete="off" value="1">
+
+                    <button class="minus-btn" type="button" name="button" onclick="sub(${cont});">
+                        <img src="../images/minus.svg" alt="" />
+                    </button>
                 </div>
-                <div class="total-price">$55</div>
+                <div class="total-price">$<input type="text" name="precio[]" id="precio_${cont}" value="55"></div>
             </div>
             `;
             cont++;
@@ -44,14 +51,21 @@ function addCarrito(x){
                     <img src="../images/comida/Taco_128.jpg" alt="" />
                 </div>
                 <div class="description">
-                    <input type="text" name="nombre" id="email" autocomplete="off" value="Taco" required>
+                    <input type="text" name="nombre[]" id="nombre_${cont}" autocomplete="off" value="Taco" required>
                     <span>Taco de maciza</span>
                 </div>
                 <div class="quantity">
-                    <span>Cantidad</span>
-                    <input type="text" name="cantidad" id="cantidad" autocomplete="off" value="1" required>
+                    <button class="plus-btn" type="button" name="button" onclick="add(${cont});">
+                        <img src="../images/plus.svg" alt="" />
+                    </button>
+
+                    <input type="text" name="cantidad[]" id="cantidad_${cont}" autocomplete="off" value="1">
+
+                    <button class="minus-btn" type="button" name="button" onclick="sub(${cont});">
+                        <img src="../images/minus.svg" alt="" />
+                    </button>
                 </div>
-                <div class="total-price">$20</div>
+                <div class="total-price">$<input type="text" name="precio[]" id="precio_${cont}" value="20"></div>
             </div>
             `;
             cont++;
@@ -69,14 +83,21 @@ function addCarrito(x){
                     <img src="../images/comida/Tacos_128.jpg" alt="" />
                 </div>
                 <div class="description">
-                    <input type="text" name="nombre" id="email" autocomplete="off" value="Tacos Dorados" required>
+                    <input type="text" name="nombre[]" id="nombre_${cont}" autocomplete="off" value="Tacos Dorados" required>
                     <span>Orden de Tacos Dorados</span>
                 </div>
                 <div class="quantity">
-                    <span>Cantidad</span>
-                    <input type="text" name="cantidad" id="cantidad" autocomplete="off" value="1" required>
-                </div>
-                <div class="total-price">$40</div>
+                    <button class="plus-btn" type="button" name="button" onclick="add(${cont});">
+                        <img src="../images/plus.svg" alt="" />
+                    </button>
+
+                    <input type="text" name="cantidad[]" id="cantidad_${cont}" autocomplete="off" value="1">
+
+                    <button class="minus-btn" type="button" name="button" onclick="sub(${cont});">
+                        <img src="../images/minus.svg" alt="" />
+                    </button>
+                        </div>
+                <div class="total-price">$<input type="text" name="precio[]" id="precio_${cont}" value="40"></div>
             </div>
             `;
             cont++;
@@ -94,14 +115,21 @@ function addCarrito(x){
                     <img src="../images/comida/Gordita_128.jpg" alt="" />
                 </div>
                 <div class="description">
-                    <input type="text" name="nombre" id="email" autocomplete="off" value="Gordita" required>
+                    <input type="text" name="nombre[]" id="nombre_${cont}" autocomplete="off" value="Gordita" required>
                     <span>Gordita de maciza</span>
                 </div>
                 <div class="quantity">
-                    <span>Cantidad</span>
-                    <input type="text" name="cantidad" id="cantidad" autocomplete="off" value="1" required>
-                </div>
-                <div class="total-price">$30</div>
+                    <button class="plus-btn" type="button" name="button" onclick="add(${cont});">
+                        <img src="../images/plus.svg" alt="" />
+                    </button>
+
+                    <input type="text" name="cantidad[]" id="cantidad_${cont}" autocomplete="off" value="1">
+
+                    <button class="minus-btn" type="button" name="button" onclick="sub(${cont});">
+                        <img src="../images/minus.svg" alt="" />
+                    </button>
+                        </div>
+                <div class="total-price">$<input type="text" name="precio[]" id="precio_${cont}" value="30"></div>
             </div>
             `;
             cont++;
@@ -117,105 +145,114 @@ function deleteItem(id){
     item.remove();
 }
 
+function add(id)
+{
+  var txtNumber = document.getElementById(`cantidad_${id}`); 
+  var newNumber = parseInt(txtNumber.value) + 1;
+  txtNumber.value = newNumber;
+
+  var txtPrecio = document.getElementById(`precio_${id}`);
+  var newPrecio;
+  var tmp = document.getElementById(`nombre_${id}`);
+
+  switch(tmp.value){
+    case 'Torta':
+        newPrecio = parseInt(txtPrecio.value) +  55;
+        break;
+    case 'Taco':
+        newPrecio = parseInt(txtPrecio.value) +  20;
+        break;
+    case 'Tacos Dorados':
+        newPrecio = parseInt(txtPrecio.value) +  40;
+        break;
+    case 'Gordita':
+        newPrecio = parseInt(txtPrecio.value) +  30;
+        break;
+    default:
+        break;
+    }
+    
+    txtPrecio.value = newPrecio;
+}
+
+function sub(id)
+{
+  var txtNumber = document.getElementById(`cantidad_${id}`);
+  var newNumber;
+    if(txtNumber.value > 0)
+        newNumber = parseInt(txtNumber.value) - 1;
+    else
+        newNumber = 0
+    txtNumber.value = newNumber;
+
+  var txtPrecio = document.getElementById(`precio_${id}`);
+  var newPrecio;
+  var tmp = document.getElementById(`nombre_${id}`);
+
+    if(tmp.value > 0){
+        switch(tmp.value){
+        case 'Torta':
+            vnewPrecio = parseInt(txtPrecio.value) - 55;
+            break;
+        case 'Taco':
+            newPrecio = parseInt(txtPrecio.value) - 20;
+            break;
+        case 'Tacos Dorados':
+            newPrecio = parseInt(txtPrecio.value) - 40;
+            break;
+        case 'Gordita':
+            newPrecio = parseInt(txtPrecio.value) - 30;
+            break;
+        default:
+            break;
+        }
+    } else {
+        newPrecio = 0;
+    }
+    txtPrecio.value = newPrecio;
+}
+
 function print(){
     console.log("SI JALA");
 }
-// switch(x){
-//     case 1: // TORTA
-//         carrito.innerHTML += 
-//         `
-//         <div class="item">
-//             <div class="buttons">
-//                 <span class="delete-btn"></span>
-//                 <span class="like-btn"></span>
-//             </div>
-//             <div class="image">
-//                 <img src="../images/comida/Torta_128.jpg" alt="" />
-//             </div>
-//             <div class="description">
-//                 <span>Torta</span>
-//                 <span>Torta de maciza</span>
-//             </div>
-//             <div class="quantity">
-//                 <span>Cantidad</span>
-//                 <input type="text" name="name" value="1">
-//             </div>
-//             <div class="total-price">$55</div>
-//         </div>
-//         `;
-//         break;
 
-//     case 2: // TACO
-//         carrito.innerHTML += 
-//         `
-//         <div class="item">
-//             <div class="buttons">
-//                 <span class="delete-btn"></span>
-//                 <span class="like-btn"></span>
-//             </div>
-//             <div class="image">
-//                 <img src="../images/comida/Taco_128.jpg" alt="" />
-//             </div>
-//             <div class="description">
-//                 <span>Taco</span>
-//                 <span>Taco de maciza</span>
-//             </div>
-//             <div class="quantity">
-//                 <span>Cantidad</span>
-//                 <input type="text" name="name" value="1">
-//             </div>
-//             <div class="total-price">$40</div>
-//         </div>
-//         `;
-//         break;
+const inputName = document.getElementById("nombre");
+const inputPrecio = document.getElementById("precio");
+const inputCantidad = document.getElementById("cantidad");
 
-//     case 3: // TACOS DORADOS
-//         carrito.innerHTML += 
-//         `
-//         <div class="item">
-//             <div class="buttons">
-//                 <span class="delete-btn"></span>
-//                 <span class="like-btn"></span>
-//             </div>
-//             <div class="image">
-//                 <img src="../images/comida/Tacos_128.jpg" alt="" />
-//             </div>
-//             <div class="description">
-//                 <span>Orden de Tacos</span>
-//                 <span>5 tacos</span>
-//             </div>
-//             <div class="quantity">
-//                 <span>Cantidad</span>
-//                 <input type="text" name="name" value="1">
-//             </div>
-//             <div class="total-price">$30</div>
-//         </div>
-//         `;
-//         break;
+function guardarOrden() {
+    //Guardar 
+    var nombre = inputName.value;
+    var precio = inputPrecio.value == "" ? null : inputPrecio.value;
+    var cantidad = inputCantidad.value;
 
-//     case 4: // GORDITAS
-//         carrito.innerHTML += 
-//         `
-//         <div class="item">
-//             <div class="buttons">
-//                 <span class="delete-btn"></span>
-//                 <span class="like-btn"></span>
-//             </div>
-//             <div class="image">
-//                 <img src="../images/comida/Gordita_128.jpg" alt="" />
-//             </div>
-//             <div class="description">
-//                 <span>Gordita</span>
-//                 <span>Gordita de Maciza</span>
-//             </div>
-//             <div class="quantity">
-//                 <span>Cantidad</span>
-//                 <input type="text" name="name" value="1">
-//             </div>
-//             <div class="total-price">$30</div>
-//         </div>
-//         `;
-//         break;
+    var json = {
+        nombre: nombre,
+        precio: precio,
+        cantidad: cantidad
+    };
 
-//     default:
-// }
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("POST", "/PROYECTO/Controllers/agregarOrdenesController.php", false);
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+            var response = JSON.parse(this.responseText);
+
+            if (this.status == 201) {
+                goList();
+            }
+            else if (this.status == 500) {
+                alert(response.messages[0]);
+            }
+            else if (this.status == 400) {
+                alert(response.messages[0]);
+            }
+        }
+    };
+
+    xhttp.setRequestHeader("Content-Type", "application/json");
+
+    xhttp.send(JSON.stringify(json));
+}
