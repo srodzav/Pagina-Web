@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
     <link rel="stylesheet" href="/PROYECTO/Views/css/promos.css">
     <title>Promos - El Panal</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+        * {
+        box-sizing: border-box;
+        }
+        html, body {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        margin: 0;
+        background-color: #FFFFFF;
+        /* background-color: #dfdfdf; */
+        font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
 <body>
    

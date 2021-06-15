@@ -12,7 +12,7 @@
 <body>
     
     <?php include('header.php') ?>
-
+    
     <div>
         <h1 style="text-align: center;"> Menú </h1>
     </div>
@@ -27,7 +27,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, animi dolorum suscipit consequuntur reiciendis mollitia veritatis consectetur quae quia, quod sed corporis sapiente ex ipsam impedit dolor quis modi non!</p>
                         <img src="../images/comida/Torta.jpg">
                         <br>
-                        <button class="boton-carrito" onClick="addCarrito(1)">Añadir</button>
+                        <button class="boton-carrito" onClick="addCarrito(1)">Añadir al carrito</button>
                     </div>
                 </div>
                 <div class="single_menu bcolor3">
@@ -36,7 +36,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam alias culpa aliquid mollitia vero autem quia aspernatur? Ipsam tenetur, cumque omnis facilis excepturi magnam optio ipsum corporis itaque laudantium.</p>
                         <img src="../images/comida/Taco_Marco.jpg">
                         <br>
-                        <button class="boton-carrito" onClick="addCarrito(2)">Añadir</button>
+                        <button class="boton-carrito" onClick="addCarrito(2)">Añadir al carrito</button>
                     </div>
                 </div>
                 <div class="single_menu bcolor3">
@@ -45,7 +45,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sit velit laborum doloremque adipisci? Corporis tempora, ipsum saepe placeat esse repudiandae est error porro ipsam recusandae nesciunt culpa ex doloribus!</p>
                         <img src="../images/comida/Tacos.jpg">
                         <br>
-                        <button class="boton-carrito" onClick="addCarrito(3)">Añadir</button>
+                        <button class="boton-carrito" onClick="addCarrito(3)">Añadir al carrito</button>
                     </div>
                 </div>
                 <div class="single_menu bcolor3">
@@ -54,7 +54,7 @@
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem eos exercitationem quaerat nostrum ab eius quam quas accusantium sequi? Aspernatur, repellendus? Tempore accusamus quas id repudiandae, sint atque asperiores facere?</p>
                         <img src="../images/comida/Torta1.jpg">
                         <br>
-                        <button class="boton-carrito" onClick="addCarrito(4)">Añadir</button>
+                        <button class="boton-carrito" onClick="addCarrito(4)">Añadir al carrito</button>
                     </div>
                 </div>
             </section>
@@ -63,6 +63,7 @@
             <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarOrdenesController.php">
                 <button type="submit" class="ordernarbtn">¡Ordenar!</button>
                 <div class="shopping-cart" id="carrito">
+                    <!-- SE AÑADEN LOS ITEMS -->
                 </div>
             </form>
         </div>
