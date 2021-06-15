@@ -4,7 +4,7 @@
     transition: .3s;
 }
 .single_menu img {
-    width: 33%;
+    width: 30%;
     position: absolute;
     height: 140px;
     border: 1px solid #ddd;
@@ -31,4 +31,9 @@
     font-weight: 200;
     font-size: 16px;
     letter-spacing: 1px;
+}
+.boton-carrito {
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 10px;
 }

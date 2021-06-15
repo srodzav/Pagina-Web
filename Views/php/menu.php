@@ -23,27 +23,30 @@
             <div class="menu_content">
                 <h4>Tortas Ahogadas <span>$55.00 c/u</span></h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, animi dolorum suscipit consequuntur reiciendis mollitia veritatis consectetur quae quia, quod sed corporis sapiente ex ipsam impedit dolor quis modi non!</p>
+                <button class="boton-carrito">Añadir</button>
             </div>
         </div>
         <div class="single_menu">
             <div class="menu_content">
                 <h4>Tacos <span>$20.00 c/u</span></h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam alias culpa aliquid mollitia vero autem quia aspernatur? Ipsam tenetur, cumque omnis facilis excepturi magnam optio ipsum corporis itaque laudantium.</p>
+                <button class="boton-carrito">Añadir</button>
             </div>
         </div>
         <div class="single_menu">
             <div class="menu_content">
                 <h4>Tacos Dorados  <span>$40.00 (5 pz)</span></h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sit velit laborum doloremque adipisci? Corporis tempora, ipsum saepe placeat esse repudiandae est error porro ipsam recusandae nesciunt culpa ex doloribus!</p>
+                <button class="boton-carrito">Añadir</button>
             </div>
         </div>
         <div class="single_menu">
             <div class="menu_content">
                 <h4>Gorditas  <span>$30.00 c/u</span></h4>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem eos exercitationem quaerat nostrum ab eius quam quas accusantium sequi? Aspernatur, repellendus? Tempore accusamus quas id repudiandae, sint atque asperiores facere?</p>
+                <button class="boton-carrito">Añadir</button>
             </div>
         </div>
-							
 	</section>
 
     <script src="/PROYECTO/Views/js/app.js"></script>

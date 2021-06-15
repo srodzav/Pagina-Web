@@ -5,7 +5,7 @@
 }
 
 input[type=text], input[type=password] {
-  width: 50%;
+  width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
@@ -30,7 +30,7 @@ hr {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 50%;
+  width: 100%;
   opacity: 0.9;
 }
 
@@ -43,6 +43,13 @@ a {
 }
 
 .signin {
-  background-color: red;
+  background-color: #f1f1f1;
   text-align: center;
+}
+
+.formulario{
+  max-width: 50%;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
 }

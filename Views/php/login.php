@@ -70,22 +70,23 @@
     <hr style="width:100%;text-align:left;margin-left:0">
     
     <!-- PARA LOGEARSE -->
-    <form method="POST" id="form_login" action="#"> 
-        <div class="container">
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>
-        
-            <label for="password"><b>Contraseña</b></label>
-            <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
+    <div class="formulario">
+        <form method="POST" id="form_login" action="#"> 
+            <div class="container">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>
+            
+                <label for="password"><b>Contraseña</b></label>
+                <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
 
-            <input type="submit" class="registerbtn" value="Iniciar Sesión">
-        </div>
+                <input type="submit" class="registerbtn" value="Iniciar Sesión">
+            </div>
 
-        <div class="container signin">
-            <p>No tienes una cuenta? <a href="registrarse.php">Registrarse</a>.</p>
-        </div>
-    </form>
-
+            <div class="container signin">
+                <p>No tienes una cuenta? <a href="registrarse.php">Registrarse</a>.</p>
+            </div>
+        </form>
+    </div>
     <!-- <script src="/proyecto/Views/js/registrarse.js"></script>
     <script>
         var form = document.getElementById("form_login");

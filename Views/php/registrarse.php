@@ -19,25 +19,27 @@
     <hr style="width:100%;text-align:left;margin-left:0">
 
     <!-- PARA REGISTRARSE -->
-    <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarUsuariosController.php">
-        <div class="container">
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>
-        
-            <label for="psw"><b>Contraseña</b></label>
-            <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
-        
-            <label for="psw-repeat"><b>Repetir Contraseña</b></label>
-            <input type="password" placeholder="Repetir Contraseña" name="password-repeat" id="password-repeat" autocomplete="off" required>
-            <hr>
+    <div class="formulario">
+        <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarUsuariosController.php">
+            <div class="container">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>
+            
+                <label for="psw"><b>Contraseña</b></label>
+                <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
+            
+                <label for="psw-repeat"><b>Repetir Contraseña</b></label>
+                <input type="password" placeholder="Repetir Contraseña" name="password-repeat" id="password-repeat" autocomplete="off" required>
+                <hr>
 
-            <button type="submit" onclick="registrarse()" class="registerbtn">Registrarse</button>
-        </div>
-        <div class="container signin">
-            <p>Tienes una cuenta? <a href="login.php">Entrar</a>.</p>
-        </div>
-    </form>
-    
+                <button type="submit" onclick="registrarse()" class="registerbtn">Registrarse</button>
+            </div>
+            <div class="container signin">
+                <p>Tienes una cuenta? <a href="login.php">Entrar</a>.</p>
+            </div>
+        </form>
+    </div>
+
     <script src="/PROYECTO/Views/js/registrarse.js"></script>
 </body>
 </html>

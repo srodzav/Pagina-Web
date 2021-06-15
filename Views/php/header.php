@@ -13,9 +13,10 @@
         </ul>
     </div>
     <div class="border loggin bcolor">
-        <label><a href="/PROYECTO/Views/php/login.php">Iniciar Sesion</a></label>
-        <label><a href="/PROYECTO/Views/php/registrarse.php">Registrarse</a></label>
+        <button class="btnmenu-form"><a href="/PROYECTO/Views/php/login.php">Iniciar Sesion</a></button>
         <br>
-        <label><a href="/PROYECTO/Views/php/login.php?cerrar_sesion">Cerrar Sesion</a></label>
+        <button class="btnmenu-form"><a href="/PROYECTO/Views/php/registrarse.php">Registrarse</a></button>
+        <br>
+        <button class="btnmenu-form"><a href="/PROYECTO/Views/php/login.php?cerrar_sesion">Cerrar Sesion</a></button>
     </div>
 </div>
