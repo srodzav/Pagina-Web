@@ -35,9 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($checarSiImagen != false) {
         $size = $_FILES["file"]["size"];
-        if($size > 50000)
-            echo "La imagen tiene que ser menor a 500kb";
-        else
             if($tipoArchivo == "jpg" || $tipoArchivo == "jpeg" || $tipoArchivo == "png"){
                 if(move_uploaded_file($_FILES["file"]["tmp_name"], $archivo)){
                     $file_name = basename($_FILES["file"]["name"]);

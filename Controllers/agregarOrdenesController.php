@@ -41,8 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: http://localhost/PROYECTO/index.php/?error=No se pudo hacer el pago");
         exit();
     }
-    header("Location: http://localhost/PROYECTO/index.php");
-    // header("Location: http://localhost/PROYECTO/Views/compra.php");
+    header("Location: http://localhost/PROYECTO/Views/php/compra.php");
     exit();
 }
 
