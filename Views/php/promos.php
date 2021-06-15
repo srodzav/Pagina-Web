@@ -45,5 +45,24 @@
         <div class="border">
             <h3 class="tmy"> *promociones validas de martes a jueves de 10.00 a 18.00 hrs. Solo consumo en sucursal; se aplican restricciones </h3>
         </div>
+
+    <?php
+        $connection = mysqli_connect('localhost', 'root', 'qwert', 'panal_db');
+        mysqli_set_charset($connection, "utf8");
+
+        session_start();
+        if(!isset($_SESSION['rol'])){
+            header('location: login.php');
+        }else{
+            if($_SESSION['rol'] == 1) { ?>
+                <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarImagenController.php">
+                    Selecciona una imagen:
+                    <input type="file" name="file">
+				    <input type="submit" name="submit" value="Subir">
+                </form>
+                <?php
+            }
+        }
+    ?>
 </body>
 </html>
