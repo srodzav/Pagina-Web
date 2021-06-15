@@ -15,7 +15,7 @@ li { display: inline; }
 .bcolor2 { background-color: #f7d547; }
 .bcolor3 { background-color: #ffff72; }
 
-button {
+.buttonhdr {
     border-radius: 18px;
     font-size: 20px;
     margin: 20px;
@@ -33,28 +33,21 @@ button {
     font-size: 15px;
     margin: 5px;
 }
+
 /* 935 NORMAL */
 @media  (max-width: 1203px) { 
     .img-logo { display: none; }
-    
     .w-25 { width: 25%; }
-    
     .w-50 { width: 50%; }
-    
     .w-75 { width: 75%; }
-    
     .w-100 { width: 100%; }
-
     .img-principal {
         margin: 5px;
     }
-    
     .img-principal-menu {
         margin: 0px;
     }
-
     .loggin { width: 25%; }
-
     button {
         border-radius: 18px;
         font-size: 20px;
