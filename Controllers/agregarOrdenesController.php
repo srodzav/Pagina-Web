@@ -23,26 +23,26 @@ catch(PDOException $e) {
     exit();
 }
 
+$ordenes = "SELECT * FROM ordenes";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
-    $cantidad = $_POST["cantidad"];
-
-    $query = $connection->prepare('INSERT INTO ordenes VALUES(NULL, :nombre, :cantidad)');
-    $query->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-    $query->bindParam(':cantidad', $cantidad, PDO::PARAM_STR);
-    $query->execute();
     
-    $rowCount = $query->rowCount();
+    //while(){
+        $nombre = $_POST["nombre"];
+        $cantidad = $_POST["cantidad"];
 
-    if ($rowCount == 0) {
-        //header("Location: http://localhost/proyecto/Views/php/registrarse/?error=No se pudo registrar el usuario");
-        header("Location: http://localhost/PROYECTO/index.php/?error=No se pudo registrar el usuario");
+        $query = $connection->prepare('INSERT INTO ordenes VALUES(NULL, :nombre, :cantidad)');
+        $query->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+        $query->bindParam(':cantidad', $cantidad, PDO::PARAM_STR);
+        $query->execute();
 
+        $rowCount = $query->rowCount();
 
-        exit();
-    }
-
-    //header("Location: http://localhost/proyecto/Views/php/registrarse/");
+        if ($rowCount == 0) {
+            header("Location: http://localhost/PROYECTO/index.php/?error=No se pudo registrar el usuario");
+            exit();
+        }
+    //}
     header("Location: http://localhost/PROYECTO/index.php");
     exit();
 }
