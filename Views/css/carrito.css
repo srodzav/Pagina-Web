@@ -10,13 +10,13 @@ body {
   height: 100%;
   padding: 10px;
   margin: 0;
-  background-color: #dfdfdf;
+  background-color: #FFFFFF;
+  /* background-color: #dfdfdf; */
   font-family: 'Roboto', sans-serif;
 }
 
 .shopping-cart {
   width: 750px;
-  height: 423px;
   margin: 80px auto;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -92,6 +92,8 @@ body {
 /* Product Image */
 .image {
   margin-right: 50px;
+  width: 120px;
+  height: 80px;
 }
 
 /* Product Description */
@@ -100,7 +102,15 @@ body {
   margin-right: 60px;
   width: 115px;
 }
-
+.description input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 120px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
 .description span {
   display: block;
   font-size: 14px;
@@ -132,14 +142,14 @@ body {
   font-weight: 300;
 }
 
-button[class*=btn] {
+/* button[class*=btn] {
   width: 30px;
   height: 30px;
   background-color: #E1E8EE;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-}
+} */
 .minus-btn img {
   margin-bottom: 3px;
 }

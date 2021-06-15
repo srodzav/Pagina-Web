@@ -12,9 +12,9 @@ body {
 }
 
 section {
-    max-width: 50%;
+    max-width: 100%;
     margin: auto;
-    width: 80%;
+    width: 100%;
     padding: 10px;
 }
 .single_menu {
@@ -22,8 +22,8 @@ section {
     margin-bottom: 10px;
 }
 .menu_content img {
-    width: 10%;
-    height: 10%;
+    width: 20%;
+    height: 20%;
 }
 /* .single_menu img {
     width: 50%;
@@ -58,4 +58,19 @@ section {
     border-radius: 10px;
     font-size: 15px;
     margin: 10px;
+}
+.ordernarbtn{
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border-radius: 15px;
+
+    height:50%; 
+    width:100px;  
+    position:relative;
+    left:50%;
 }
