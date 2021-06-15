@@ -45,3 +45,15 @@ input[type=text], select, textarea {
     width: 100%;
     opacity: 0.9;
   }
+
+
+  @media  (max-width: 900px) {
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      max-width: 100%;
+      margin: auto;
+      width: 100%;
+    }
+  }

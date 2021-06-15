@@ -51,3 +51,13 @@ a {
   width: 80%;
   padding: 10px;
 }
+
+@media (max-width: 950px){
+  .formulario{
+    max-width: 100%;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+  }
+
+}

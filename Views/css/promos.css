@@ -1,0 +1,50 @@
+.upload{
+    border: rgb(201, 201, 201) solid 1px;
+    text-align: center;
+    background-color: #eee;
+    margin: 0 auto;
+    width: 400px;
+    padding: 20px;
+}
+
+.img-promo{
+    width:400px;
+    height: 400px;
+    margin: 15px;
+}
+
+.formulario{
+    max-width: 10%;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+  }
+  
+
+@media (max-width: 1255px) {
+    .img-promo{
+        width: 300px;
+        height: 300px;
+        margin: 5px;
+    }
+    .ul-promo{
+        text-align: center;
+    }
+    .li-promo{
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1255px) {
+    .img-promo{
+        width: 350px;
+        height: 350px;
+        margin: 2px;
+    }
+    .ul-promo{
+        text-align: center;
+    }
+    .li-promo{
+        display: inline-block;
+    }
+}

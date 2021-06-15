@@ -60,3 +60,22 @@ section {
 	color:black;
 	font: 12px;
 }
+
+@media  (max-width: 1260px) {
+    .ordernarbtn{
+        background-color: #04AA6D;
+        color: white;
+        font-size: 30px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        opacity: 0.9;
+        border-radius: 15px;
+    
+        height:10%; 
+        width:100%;  
+        position:static;
+        top: auto;
+        left: auto;
+    }
+}
