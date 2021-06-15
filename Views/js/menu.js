@@ -135,6 +135,38 @@ function addCarrito(x){
             cont++;
             break;
 
+        case 5: // MICHELADAS
+            carrito.innerHTML +=
+            `
+            <div class="item"  id="item_${cont}">
+                <div class="buttons">
+                    <button class="delete-btn" onclick="deleteItem('item_${cont}')"></button>
+                    <span class="like-btn  is-active"></span>
+                </div>
+                <div class="image">
+                    <img src="../images/comida/Michelada_128.jpg" alt="" />
+                </div>
+                <div class="description">
+                    <input type="text" name="nombre[]" id="nombre_${cont}" autocomplete="off" value="Michelada" required>
+                    <span>Michelada</span>
+                </div>
+                <div class="quantity">
+                    <button class="plus-btn" type="button" name="button" onclick="add(${cont});">
+                        <img src="../images/plus.svg" alt="" />
+                    </button>
+
+                    <input type="text" name="cantidad[]" id="cantidad_${cont}" autocomplete="off" value="1">
+
+                    <button class="minus-btn" type="button" name="button" onclick="sub(${cont});">
+                        <img src="../images/minus.svg" alt="" />
+                    </button>
+                        </div>
+                <div class="total-price">$<input type="text" name="precio[]" id="precio_${cont}" value="39"></div>
+            </div>
+            `;
+            cont++;
+            break;
+            
         default:
     }
 }
@@ -167,6 +199,9 @@ function add(id)
         break;
     case 'Gordita':
         newPrecio = parseInt(txtPrecio.value) +  30;
+        break;
+    case 'Michelada':
+        newPrecio = parseInt(txtPrecio.value) +  39;
         break;
     default:
         break;
@@ -203,6 +238,9 @@ function sub(id)
             break;
         case 'Gordita':
             newPrecio = parseInt(txtPrecio.value) - 30;
+            break;
+        case 'Michelada':
+            newPrecio = parseInt(txtPrecio.value) -  39;
             break;
         default:
             break;
