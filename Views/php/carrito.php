@@ -17,8 +17,11 @@
     </div>
     <hr style="width:100%;text-align:left;margin-left:0">
 
-    <div class="shopping-cart">
-        <!-- Product #1 -->
+    <div class="shopping-cart" id="s_cart">
+
+    </div>
+
+    <!-- <div class="shopping-cart">
         <div class="item">
             <div class="buttons">
                 <span class="delete-btn"></span>
@@ -37,7 +40,7 @@
             </div>
             <div class="total-price">$40</div>
         </div>
-        <!-- Product #2 -->
+        
         <div class="item">
             <div class="buttons">
                 <span class="delete-btn"></span>
@@ -56,7 +59,7 @@
             </div>
             <div class="total-price">$55</div>
         </div>
-        <!-- Product #3 -->
+        
         <div class="item">
             <div class="buttons">
                 <span class="delete-btn"></span>
@@ -75,55 +78,8 @@
             </div>
             <div class="total-price">$30</div>
         </div>
-    </div>
-
-    <!-- <div class="shopping-cart">
-       
-        <div class="item">
-            <div class="image">
-                <img src="/PROYECTO/Views/images/comida/Tacos.jpg" width="100"/>
-            </div>
-            <div class="description">
-                <span>Orden de Tacos</span>
-                <span>Lorem</span>
-            </div>
-            <div class="total-price">$20</div>
-        </div>
-
-        <div class="item">
-            <div class="image">
-                <img src="/PROYECTO/Views/images/comida/Torta_Marco.jpg" width="100"/>
-            </div>
-            <div class="description">
-                <span>Torta</span>
-                <span>Lorem </span>
-            </div>
-            <div class="total-price">$55</div>
-        </div>
-
-        <div class="item">
-            <div class="image">
-                <img src="/PROYECTO/Views/images/comida/Michelada_Marco.jpg" width="100"/>
-            </div>
-            <div class="description">
-                <span>Michelada</span>
-                <span>Lorem</span>
-            </div>
-            <div class="total-price">$40</div>
-        </div>
-
-        <div class="item">
-            <div class="image">
-                <img src="/PROYECTO/Views/images/comida/Taco_Marco.jpg" width="100"/>
-            </div>
-            <div class="description">
-                <span>Taco</span>
-                <span>Lorem</span>
-            </div>
-            <div class="total-price">$40</div>
-        </div>
     </div> -->
-    
+
     <!-- <script type="text/javascript">
         var minus = document.getElementById("minus-btn");
         var plus = document.getElementById("plus-btn");

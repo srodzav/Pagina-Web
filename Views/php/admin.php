@@ -88,7 +88,7 @@
         </table>
         
         <div>
-            <h4 style="text-align: center;"> Añadir Administrador </h4>
+            <h3 style="text-align: center;"> Añadir Administrador </h3>
         </div>
         <hr style="width:100%;text-align:left;margin-left:0">
         <br>
@@ -101,10 +101,6 @@
             
                 <label for="psw"><b>Contraseña</b></label>
                 <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
-            
-                <label for="psw-repeat"><b>Repetir Contraseña</b></label>
-                <input type="password" placeholder="Repetir Contraseña" name="password-repeat" id="password-repeat" autocomplete="off" required>
-                <hr>
 
                 <button type="submit" class="registerbtn">Añadir</button>
             </div>

@@ -9,7 +9,7 @@
             <li><a href="/PROYECTO/Views/php/promos.php"><button class="buttonhdr">Promos</button></a></li>
             <li><a href="/PROYECTO/Views/php/galeria.php"><button class="buttonhdr">Galeria</button></a></li>
             <li><a href="/PROYECTO/Views/php/contacto.php"><button class="buttonhdr">Contacto</button></a></li>
-            <li><a href="/PROYECTO/Views/php/carrito.php"><button class="buttonhdr">Carrito</button></a></li>
+            <!-- <li><a href="/PROYECTO/Views/php/carrito.php"><button class="buttonhdr">Carrito</button></a></li> -->
         </ul>
     </div>
     <div class="border loggin bcolor">
