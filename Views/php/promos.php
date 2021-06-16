@@ -25,7 +25,7 @@
                 <li class="li-promo"><img src="/PROYECTO/Views/images/comida/Promo2.jpg" class="img-promo"></li>
                 <li class="li-promo"><img src="/PROYECTO/Views/images/comida/Promo3.PNG" class="img-promo"></li>
                 <li class="li-promo"><img src="/PROYECTO/Views/images/comida/Promo4.PNG" class="img-promo"></li>
-                <?php
+                <!-- <?php
                     $query = $connection->query("SELECT * FROM imagenes ORDER BY uploaded_on DESC");
                     if($query->num_rows > 0){
                         while($row = $query->fetch_assoc()){
@@ -33,8 +33,28 @@
                             <li><img src="<?php echo $imageURL; ?>" class="img-promo"></li>
                         <?php }
                     }
-                ?>
+                ?> -->
             </ul>
+        </div>
+    </div>
+    <div class="flex bcolor2">
+        <div class="flex border justify-space w-100">
+            <?php
+                $query = $connection->query("SELECT * FROM promociones");
+                if($query->num_rows > 0){
+                    while($row = $query->fetch_assoc()){
+                        $imageURL = '/PROYECTO/Controllers/uploads/'.$row["imagen"]; ?>
+                        <ul class="ul-promo-generada">
+                            <li class="li-promo-generada"> <h3> <?php echo $row["nombre"] ?> </h3> </li>
+                            <li class="li-promo-generada"> <h6> <?php echo $row["producto1"] ?> </h6> </li>
+                            <li class="li-promo-generada"> <h6> <?php echo $row["producto2"] ?> </h6> </li>
+                            <li class="li-promo-generada"> <h6> <?php echo $row["producto3"] ?> </h6> </li>
+                            <li class="li-promo-generada"> <h6> <?php echo $row["precio"] ?> </h6> </li>
+                            <li class="li-promo-generada"> <img src="<?php echo $imageURL; ?>" class="img-promo-generada"> </li>
+                        </ul>
+                    <?php }
+                }
+            ?>
         </div>
     </div>
     <hr style="width:100%;text-align:left;margin-left:0">
@@ -44,6 +64,79 @@
     <hr style="width:100%;text-align:left;margin-left:0">
         
     <?php
+        $connection = mysqli_connect('localhost', 'root', 'qwert', 'panal_db');
+        mysqli_set_charset($connection, "utf8");
+
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        }if(!isset($_SESSION['rol'])){}else
+        if($_SESSION['rol'] == 1){ ?>
+            <hr style="width:100%;text-align:left;margin-left:0">
+            <div>
+                <h3 style="text-align: center;"> Añadir Promocion </h3>
+            </div>
+            <hr style="width:100%;text-align:left;margin-left:0">
+            <br>
+
+            <div class="formulario">
+                <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarPromocionController.php">
+                    <div class="container">
+                        <label for="nombre"><b>Nombre</b></label>
+                        <input type="text" name="nombre" id="nombre" autocomplete="off" required>
+                    
+                        <label for="productos"><b>Productos</b></label>
+                        <input type="text" name="producto1" list="productos">
+                        <datalist id="productos">
+                            <?php 
+                                $productos = "SELECT * FROM productos";
+                                $resultado = mysqli_query($connection, $productos); 
+                                while($row=mysqli_fetch_assoc($resultado))
+                                { ?>
+                                    <option value="<?php echo $row["nombre"]?>" >
+                            <?php } mysqli_free_result($resultado); ?>
+                        </datalist> 
+
+                        <input type="text" name="producto2" list="productos">
+                        <datalist id="productos">
+                            <?php 
+                                $productos = "SELECT * FROM productos";
+                                $resultado = mysqli_query($connection, $productos); 
+                                while($row=mysqli_fetch_assoc($resultado))
+                                { ?>
+                                    <option value="<?php echo $row["nombre"]?>" >
+                            <?php } mysqli_free_result($resultado); ?>
+                        </datalist> 
+
+                        <input type="text" name="producto3" list="productos">
+                        <datalist id="productos">
+                            <?php 
+                                $productos = "SELECT * FROM productos";
+                                $resultado = mysqli_query($connection, $productos); 
+                                while($row=mysqli_fetch_assoc($resultado))
+                                { ?>
+                                    <option value="<?php echo $row["nombre"]?>" >
+                            <?php } mysqli_free_result($resultado); ?>
+                        </datalist> 
+
+                        <label for="precio"><b>Precio</b></label>
+                        <input type="text" name="precio" id="precio" autocomplete="off" required>
+                    
+                        <label for="imagen"><b>Imagen</b></label>
+                        <input type="file" name="file" id="file">
+
+                        <button type="submit" class="registerbtn">Añadir</button>
+                    </div>
+                </form>
+                
+            </div>
+    <?php } ?>
+
+
+
+
+
+    <!-- <?php
         if(isset($_POST['eliminar']))
         {
             $id = $_POST['eliminar'];
@@ -57,7 +150,6 @@
             }
         }
     ?>
-    
     <?php
         $connection = mysqli_connect('localhost', 'root', 'qwert', 'panal_db');
         mysqli_set_charset($connection, "utf8");
@@ -125,6 +217,6 @@
                 default:
             }
         }
-    ?>
+    ?> -->
 </body>
 </html>

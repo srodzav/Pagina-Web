@@ -85,7 +85,7 @@
                 </tr>
             <?php } mysqli_free_result($resultado); ?>
         </table>
-        
+    </div>
         <div>
             <h3 style="text-align: center;"> Añadir Administrador </h3>
         </div>
@@ -93,19 +93,22 @@
         <br>
 
         <div class="formulario">
-        <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarAdministradorController.php">
-            <div class="container">
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>
-            
-                <label for="psw"><b>Contraseña</b></label>
-                <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
+            <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarAdministradorController.php">
+                <div class="container">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>
+                
+                    <label for="psw"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Contraseña" name="password" id="password" autocomplete="off" required>
 
-                <button type="submit" class="registerbtn">Añadir</button>
-            </div>
-        </form>
+                    <button type="submit" class="registerbtn">Añadir</button>
+                </div>
+            </form>
+        </div>
     </div>
+    
     <br><br>
+
     <div>
         <div>
             <h3 style="text-align: center;"> Ultimos Pedidos </h3>
