@@ -61,6 +61,61 @@ section {
 	font: 12px;
 }
 
+
+
+
+
+
+
+
+.container {
+    padding: 16px;
+  }
+.formulario{
+    max-width: 50%;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+input[type=text], input[type=password], input[type=file] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  .registerbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity:1;
+  }  
+
+
+
+
+
+
 @media  (max-width: 1260px) {
     .ordernarbtn{
         background-color: #04AA6D;
@@ -77,5 +132,12 @@ section {
         position:static;
         top: auto;
         left: auto;
+    }
+
+    .w-25{
+        width: 50%;
+    }
+    .w-75{
+        width: 50%;
     }
 }

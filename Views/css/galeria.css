@@ -46,3 +46,12 @@ body {
     background-color: #666;
     color: white;
 }
+
+.upload{
+    border: rgb(201, 201, 201) solid 1px;
+    text-align: center;
+    background-color: #eee;
+    margin: 0 auto;
+    width: 400px;
+    padding: 20px;
+}

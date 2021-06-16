@@ -7,19 +7,71 @@
     padding: 20px;
 }
 
+
+
+
+
+
+.ul-promo-generada{
+    
+}
+
+.li-promo-generada{
+
+}
+
+.img-promo-generada{
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+}
+
+
+
+
 .img-promo{
     width:400px;
     height: 400px;
     margin: 15px;
 }
-
+.container {
+    padding: 16px;
+  }
 .formulario{
-    max-width: 10%;
+    max-width: 50%;
     margin: auto;
     width: 80%;
     padding: 10px;
+}
+input[type=text], input[type=password], input[type=file] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
   }
   
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .registerbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity:1;
+  }  
+
 
 @media (max-width: 1255px) {
     .img-promo{

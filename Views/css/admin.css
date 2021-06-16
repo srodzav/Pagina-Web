@@ -1,9 +1,8 @@
 .tabla-usuarios {
-    border-collapse: collapse;
     margin: 25px 0;
     font-size:  0.9em;
     width: 600px;
-    height: 600px;
+    height: auto;
     margin: 80px auto;
     display: flex;
     flex-direction: column;
@@ -24,6 +23,7 @@
 .tabla-usuarios td:nth-of-type(even) {
     background-color: #f3f3f3;
 }
+
 /*  //////////////////////////////////////   */
 .tabla-pedidos {
     border-collapse: collapse;
@@ -68,9 +68,9 @@
   }
 
 .formulario{
-    max-width: 50%;
+    max-width: 30%;
     margin: auto;
-    width: 80%;
+    width: 45%;
     padding: 10px;
   }
   
@@ -84,7 +84,8 @@
     width: 100%;
     opacity: 0.9;
   }
-  
+
+
   @media (max-width: 850px) {
     .tabla-usuarios {
       border-collapse: collapse;
