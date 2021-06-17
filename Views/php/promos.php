@@ -1,3 +1,11 @@
+<?php
+
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +13,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
+
+    <link rel="stylesheet" href="/PROYECTO/Views/css/menu.css">
+    <link rel="stylesheet" href="/PROYECTO/Views/css/carrito.css">
     <link rel="stylesheet" href="/PROYECTO/Views/css/promos.css">
-    <link rel="stylesheet" href="/PROYECTO/Views/css/admin.css">
+    
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
     <title>Promos - El Panal</title>
 </head>
 <body>
@@ -37,6 +50,7 @@
             </ul>
         </div>
     </div>
+
     <div class="flex bcolor2">
         <div class="flex border justify-space w-100">
             <?php
@@ -44,25 +58,45 @@
                 if($query->num_rows > 0){
                     while($row = $query->fetch_assoc()){
                         $imageURL = '/PROYECTO/Controllers/uploads/'.$row["imagen"]; ?>
-                        <ul class="ul-promo-generada">
-                            <li class="li-promo-generada"> <h3> <?php echo $row["nombre"] ?> </h3> </li>
-                            <li class="li-promo-generada"> <h6> <?php echo $row["producto1"] ?> </h6> </li>
-                            <li class="li-promo-generada"> <h6> <?php echo $row["producto2"] ?> </h6> </li>
-                            <li class="li-promo-generada"> <h6> <?php echo $row["producto3"] ?> </h6> </li>
-                            <li class="li-promo-generada"> <h6> <?php echo $row["precio"] ?> </h6> </li>
-                            <li class="li-promo-generada"> <img src="<?php echo $imageURL; ?>" class="img-promo-generada"> </li>
+                        <ul class="ul-promo-generada bcolor3">
+                            <li class="li-promo-generada">
+                                <img src="<?php echo $imageURL; ?>" class="img-promo-generada">
+                                <h3> <?php echo $row["nombre"] ?> </h3>
+                                <p class="productos">1. <?php echo $row["producto1"] ?> </p>
+                                <p class="productos">2. <?php echo $row["producto2"] ?> </p>
+                                <p class="productos">3. <?php echo $row["producto3"] ?> </p>
+                                <p>Costo: $<?php echo $row["precio"] ?> </p>
+                            </li>
+                            <button class="boton-carrito" onClick="addCarrito('<?php echo $row["nombre"]?>', <?php echo $row["precio"]?>, '<?php echo $row["imagen"]?>', '<?php echo $row["producto1"]?>', '<?php echo $row["producto2"]?>', '<?php echo $row["producto3"]?>',  '<?php echo $_SESSION['usuario'] ?>')">Añadir al carrito</button>
                         </ul>
                     <?php }
                 }
             ?>
         </div>
     </div>
+
+    <div class="bcolor2">
+        <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarOrdenesController.php">
+            <button type="submit" class="ordernarbtn"> ¡Ordenar! </button>
+            <div class="shopping-cart" id="carrito" required>
+                <!-- SE AÑADEN LOS ITEMS -->
+            </div>
+        </form>
+        <br><br><br><br>
+    </div>
+
     <hr style="width:100%;text-align:left;margin-left:0">
         <div class="border">
             <h3 class="tmy"> *promociones validas de martes a jueves de 10.00 a 18.00 hrs. Solo consumo en sucursal; se aplican restricciones </h3>
         </div>
     <hr style="width:100%;text-align:left;margin-left:0">
         
+
+
+
+
+
+
     <?php
         $connection = mysqli_connect('localhost', 'root', 'qwert', 'panal_db');
         mysqli_set_charset($connection, "utf8");
@@ -75,6 +109,7 @@
             <hr style="width:100%;text-align:left;margin-left:0">
             <div>
                 <h3 style="text-align: center;"> Añadir Promocion </h3>
+                <!-- <h2 style="text-align: center;"> Bienvenido: <?php echo $_SESSION['usuario'] ?> </h2> -->
             </div>
             <hr style="width:100%;text-align:left;margin-left:0">
             <br>
@@ -83,10 +118,10 @@
                 <form method="POST" enctype="multipart/form-data" action="/PROYECTO/Controllers/agregarPromocionController.php">
                     <div class="container">
                         <label for="nombre"><b>Nombre</b></label>
-                        <input type="text" name="nombre" id="nombre" autocomplete="off" required>
+                        <input class="input-promo" type="text" name="nombre" id="nombre" autocomplete="off" required>
                     
                         <label for="productos"><b>Productos</b></label>
-                        <input type="text" name="producto1" list="productos">
+                        <input class="input-promo" type="text" name="producto1" list="productos">
                         <datalist id="productos">
                             <?php 
                                 $productos = "SELECT * FROM productos";
@@ -97,7 +132,7 @@
                             <?php } mysqli_free_result($resultado); ?>
                         </datalist> 
 
-                        <input type="text" name="producto2" list="productos">
+                        <input class="input-promo" type="text" name="producto2" list="productos">
                         <datalist id="productos">
                             <?php 
                                 $productos = "SELECT * FROM productos";
@@ -108,7 +143,7 @@
                             <?php } mysqli_free_result($resultado); ?>
                         </datalist> 
 
-                        <input type="text" name="producto3" list="productos">
+                        <input class="input-promo" type="text" name="producto3" list="productos">
                         <datalist id="productos">
                             <?php 
                                 $productos = "SELECT * FROM productos";
@@ -120,10 +155,10 @@
                         </datalist> 
 
                         <label for="precio"><b>Precio</b></label>
-                        <input type="text" name="precio" id="precio" autocomplete="off" required>
+                        <input class="input-promo" type="text" name="precio" id="precio" autocomplete="off" required>
                     
                         <label for="imagen"><b>Imagen</b></label>
-                        <input type="file" name="file" id="file">
+                        <input class="input-promo" type="file" name="file" id="file">
 
                         <button type="submit" class="registerbtn">Añadir</button>
                     </div>
@@ -132,9 +167,14 @@
             </div>
     <?php } ?>
 
-
-
-
+    <!-- <ul class="ul-promo-generada">
+        <h3> <?php echo $row["nombre"] ?> </h3>
+        <li class="li-promo-generada"> <h6> <?php echo $row["producto1"] ?> </h6> </li>
+        <li class="li-promo-generada"> <h6> <?php echo $row["producto2"] ?> </h6> </li>
+        <li class="li-promo-generada"> <h6> <?php echo $row["producto3"] ?> </h6> </li>
+        <li class="li-promo-generada"> <h6> <?php echo $row["precio"] ?> </h6> </li>
+        <li class="li-promo-generada"> <img src="<?php echo $imageURL; ?>" class="img-promo-generada"> </li>
+    </ul> -->
 
     <!-- <?php
         if(isset($_POST['eliminar']))
@@ -218,5 +258,8 @@
             }
         }
     ?> -->
+
+    
+    <script src="/PROYECTO/Views/js/promos.js"></script>
 </body>
 </html>

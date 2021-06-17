@@ -1,3 +1,44 @@
+.ul-promo-generada {
+    list-style-type: none;
+    width: 500px;
+}
+.li-promo-generada{
+    padding: 10px;
+    overflow: auto;
+}
+.li-promo-generada img {
+    float: left;
+    margin: 0 15px 0 0;
+}
+.li-promo-generada p {
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+    font-size: 14px;
+}
+.img-promo-generada{
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
+.img-promo{
+    width:400px;
+    height: 400px;
+    margin: 15px;
+}
+.container {
+    padding: 16px;
+  }
+.formulario{
+    max-width: 50%;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+
+
+
+
+
 section {
     max-width: 100%;
     margin: auto;
@@ -141,3 +182,5 @@ input[type=text], input[type=password], input[type=file] {
         width: 50%;
     }
 }
+
+

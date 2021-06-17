@@ -1,3 +1,12 @@
+<?php
+
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +41,8 @@
     <div>
         <h1 style="text-align: center;"> Menú </h1>
     </div>
-    
     <hr style="width:100%;text-align:left;margin-left:0">
+    
     <?php $mensaje = "SELECT * FROM productos"; ?>
     <div class="container">
         <div class="w-40 obj">
@@ -47,7 +56,7 @@
                             <p> <?php echo $row["descripcion"] ?> </p>
                             <img src="../../Controllers/uploads/<?php echo $row["imagen"]?>">
                             <br>
-                            <button class="boton-carrito" onClick="addCarrito('<?php echo $row["nombre"]?>', <?php echo $row["precio"]?>, '<?php echo $row["imagen"]?>', '<?php echo $row["descripcion"]?>')">Añadir al carrito</button>
+                            <button class="boton-carrito" onClick="addCarrito('<?php echo $row["nombre"]?>', <?php echo $row["precio"]?>, '<?php echo $row["imagen"]?>', '<?php echo $row["descripcion"]?>', '<?php echo $_SESSION['usuario'] ?>')">Añadir al carrito</button>
                         </div>
                     </div>
                 <?php } mysqli_free_result($resultado); ?>
@@ -75,6 +84,7 @@
             <hr style="width:100%;text-align:left;margin-left:0">
             <div>
                 <h3 style="text-align: center;"> Añadir Producto </h3>
+                <h4 style="text-align: center;"> Bienvenido: <?php echo $_SESSION['usuario'] ?> </h4>
             </div>
             <hr style="width:100%;text-align:left;margin-left:0">
             <br>
@@ -99,55 +109,64 @@
                 </form>
             </div>
     <?php } ?>
+
+    <?php
+        $connection = mysqli_connect('localhost', 'root', 'qwert', 'panal_db');
+        mysqli_set_charset($connection, "utf8");
+
+        $mensaje = "SELECT * FROM promociones";
+
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
+        if(!isset($_SESSION['rol'])){}else
+        if($_SESSION['rol'] == 1){
+            ?>
+            <div>
+                <h3 style="text-align: center;"> Editar Promociones </h3>
+            </div>
+            <hr style="width:100%;text-align:left;margin-left:0">
+            <div class="tabla-pedidos">
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>Nombre</th>
+                        <th>Producto 1</th>
+                        <th>Producto 2</th>
+                        <th>Producto 3</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Eliminar</th>
+                    </tr>
+
+                    <?php $resultado = mysqli_query($connection, $mensaje); 
+
+                    while($row=mysqli_fetch_assoc($resultado))
+                    { ?>
+                        <tr>
+                            <td> <?php echo $row["id"] ?> </td>
+                            <td> <?php echo $row["nombre"]?> </td>
+                            <td> <?php echo $row["producto1"]?> </td>
+                            <td> <?php echo $row["producto2"]?> </td>
+                            <td> <?php echo $row["producto3"]?> </td>
+                            <td> <?php echo $row["precio"]?> </td>
+                            <td> <?php echo $row["imagen"]?> </td>
+
+                            <td> 
+                                <form method="POST" id="form_eliminar_<?php echo $row['id']; ?>" action="/PROYECTO/Views/php/contacto.php">
+                                    <input type="hidden" name="eliminar" value="<?php echo $row['id']; ?> "> 
+                                    <input type="submit" value="X"> 
+                                </form>
+                            </td>
+                        </tr>
+                    <?php } mysqli_free_result($resultado); ?>
+                </table>
+            </div> 
+        <?php } ?>
+        <br><br><br><br><br><br>
     
     <script src="/PROYECTO/Views/js/app.js"></script>
     <script type="text/javascript" src="/PROYECTO/Views/js/menu.js"></script>
 </body>
 </html>
-
-<!-- 
-<div class="single_menu bcolor3">
-    <div class="menu_content">
-        <h4>Tortas Ahogadas <span>$55.00 c/u</span></h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, animi dolorum suscipit consequuntur reiciendis mollitia veritatis consectetur quae quia, quod sed corporis sapiente ex ipsam impedit dolor quis modi non!</p>
-        <img src="../images/comida/Torta.jpg">
-        <br>
-        <button class="boton-carrito" onClick="addCarrito(1)">Añadir al carrito</button>
-    </div>
-</div>
-<div class="single_menu bcolor3">
-    <div class="menu_content">
-        <h4>Tacos <span>$20.00 c/u</span></h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam alias culpa aliquid mollitia vero autem quia aspernatur? Ipsam tenetur, cumque omnis facilis excepturi magnam optio ipsum corporis itaque laudantium.</p>
-        <img src="../images/comida/Taco_Marco.jpg">
-        <br>
-        <button class="boton-carrito" onClick="addCarrito(2)">Añadir al carrito</button>
-    </div>
-</div>
-<div class="single_menu bcolor3">
-    <div class="menu_content">
-        <h4>Tacos Dorados  <span>$40.00 (5 pz)</span></h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sit velit laborum doloremque adipisci? Corporis tempora, ipsum saepe placeat esse repudiandae est error porro ipsam recusandae nesciunt culpa ex doloribus!</p>
-        <img src="../images/comida/Tacos.jpg">
-        <br>
-        <button class="boton-carrito" onClick="addCarrito(3)">Añadir al carrito</button>
-    </div>
-</div>
-<div class="single_menu bcolor3">
-    <div class="menu_content">
-        <h4>Gorditas  <span>$30.00 c/u</span></h4>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem eos exercitationem quaerat nostrum ab eius quam quas accusantium sequi? Aspernatur, repellendus? Tempore accusamus quas id repudiandae, sint atque asperiores facere?</p>
-        <img src="../images/comida/Torta1.jpg">
-        <br>
-        <button class="boton-carrito" onClick="addCarrito(4)">Añadir al carrito</button>
-    </div>
-</div>
-<div class="single_menu bcolor3">
-    <div class="menu_content">
-        <h4>Michelada  <span>$39.00 c/u</span></h4>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem eos exercitationem quaerat nostrum ab eius quam quas accusantium sequi? Aspernatur, repellendus? Tempore accusamus quas id repudiandae, sint atque asperiores facere?</p>
-        <img src="../images/comida/Michelada_Marco.jpg">
-        <br>
-        <button class="boton-carrito" onClick="addCarrito(5)">Añadir al carrito</button>
-    </div>
-</div> -->

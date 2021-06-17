@@ -2,9 +2,9 @@ const carrito = document.getElementById("carrito");
 
 var cont = 0;
 
-function addCarrito(nombre,precio,img,desc,user){
+function addCarrito(nombre,precio,imagen,producto1,producto2,producto3,user){
 
-    console.log(nombre,precio,img,desc,user);
+    console.log(nombre,precio,imagen,producto1,producto2,producto3,user);
 
     carrito.innerHTML +=
     `
@@ -14,11 +14,10 @@ function addCarrito(nombre,precio,img,desc,user){
             <span class="like-btn is-active"></span>
         </div>
         <div class="image">
-            <img class="image" src="../../Controllers/uploads/${img}" alt="" />
+            <img class="image" src="/PROYECTO/Controllers/uploads/${imagen}" alt="" />
         </div>
         <div class="description">
             <input type="text" name="nombre[]" id="nombre_${cont}" autocomplete="off" value="${nombre}" required>
-            <span>${desc}</span>
         </div>
         <div class="quantity">
             <button class="plus-btn" type="button" name="button" onclick="add(${cont}, ${precio});">
@@ -37,6 +36,13 @@ function addCarrito(nombre,precio,img,desc,user){
     `;
     cont++;
 }
+
+function deleteItem(id){
+    var item = document.getElementById(id);
+
+    item.remove();
+}
+
 
 function deleteItem(id){
     var item = document.getElementById(id);
@@ -71,49 +77,4 @@ function sub(id, precio)
     else
         txtPrecio.value = 0;
 
-}
-
-function print(){
-    console.log("SI JALA");
-}
-
-const inputName = document.getElementById("nombre");
-const inputPrecio = document.getElementById("precio");
-const inputCantidad = document.getElementById("cantidad");
-
-function guardarOrden() {
-    //Guardar 
-    var nombre = inputName.value;
-    var precio = inputPrecio.value == "" ? null : inputPrecio.value;
-    var cantidad = inputCantidad.value;
-
-    var json = {
-        nombre: nombre,
-        precio: precio,
-        cantidad: cantidad
-    };
-
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.open("POST", "/PROYECTO/Controllers/agregarOrdenesController.php", false);
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            var response = JSON.parse(this.responseText);
-
-            if (this.status == 201) {
-                goList();
-            }
-            else if (this.status == 500) {
-                alert(response.messages[0]);
-            }
-            else if (this.status == 400) {
-                alert(response.messages[0]);
-            }
-        }
-    };
-
-    xhttp.setRequestHeader("Content-Type", "application/json");
-
-    xhttp.send(JSON.stringify(json));
 }
