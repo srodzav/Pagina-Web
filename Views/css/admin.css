@@ -28,9 +28,9 @@
 .tabla-pedidos {
     border-collapse: collapse;
     margin: 25px 0;
-    font-size:  1.3em;
+    font-size:   0.9em;
     width: 600px;
-    height: 600px;
+    height: auto;
     margin: 80px auto;
     display: flex;
     flex-direction: column;
