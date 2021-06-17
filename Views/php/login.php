@@ -20,45 +20,13 @@
             default:
         }
     }
-    // if(isset($_POST['email']) && isset($_POST['password'])){
-    //     $email = $_POST['email'];
-    //     $contrasena = $_POST['password'];
-
-    //     $db = new DB();
-    //     $query = $db->getConnection()->prepare('SELECT * FROM usuarios WHERE email = :email AND contrasena = :contrasena');
-    //     $query->execute(['email' => $email, 'contrasena' => $contrasena]);
-
-    //     $row = $query->fetch(PDO::FETCH_NUM);
-
-    //     if($row == true){
-    //         $rol = $row[3];
-    //         $_SESSION['rol'] = $rol;
-
-    //         switch($_SESSION['rol']){
-    //             case 1:
-    //                 header('location: /PROYECTO/Views/php/admin.php');
-    //                 break;
-    //             case 2:
-    //                 header('location: /PROYECTO/index.php');
-    //                 break;
-    //             default:
-    //         }
-    //     } else {
-    //         echo
-    //             '<script>
-    //             alert("Usuario o contraseña incorrecto");
-    //             </script>';
-    //     }
-    // }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
     <link rel="stylesheet" href="/PROYECTO/Views/css/registrarse.css">
     <title>Iniciar Sesion</title>
 </head>
@@ -90,51 +58,5 @@
             </div>
         </form>
     </div>
-    <!-- <script src="/proyecto/Views/js/registrarse.js"></script>
-    <script>
-        var form = document.getElementById("form_login");
-
-        form.addEventListener("submit", login);
-
-        function login(e) {
-            //Validar usuario
-            e.preventDefault();
-            e.stopPropagation();
-
-            //Guardar 
-            var email = document.getElementById("email");
-            var contasena = document.getElementById("password");
-
-            var json = {
-                email: email.value,
-                contasena: contasena.value
-            };
-
-            var xhttp = new XMLHttpRequest();
-
-            xhttp.open("POST", "/proyecto/Controllers/usuariosController.php", false);
-
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        //window.location.href = "/proyecto/index.php";
-                        console.log("Inicio de Sesión Exitoso");
-                    }
-                    else if (this.status == 500) {
-                        var response = JSON.parse(this.responseText);
-                        alert(response.messages[0]);
-                    }
-                    else if (this.status == 400) {
-                        var response = JSON.parse(this.responseText);
-                        alert(response.messages[0]);
-                    }
-                }
-            };
-
-            xhttp.setRequestHeader("Content-Type", "application/json");
-
-            xhttp.send(JSON.stringify(json));
-        }
-    </script> -->
 </body>
 </html>

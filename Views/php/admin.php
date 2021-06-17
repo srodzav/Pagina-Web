@@ -21,7 +21,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/PROYECTO/Views/css/style.css">
     <link rel="stylesheet" href="/PROYECTO/Views/css/admin.css">
     <title>Admin - El Panal</title>
 </head>
@@ -60,7 +59,7 @@
                 <th>Eliminar</th>
             </tr>
 
-            <?php $resultado = mysqli_query($connection, $usuarios); 
+            <?php $resultado = mysqli_query($connection, $usuarios); $cont = 0;
 
             while($row=mysqli_fetch_assoc($resultado))
             { ?>
