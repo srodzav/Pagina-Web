@@ -1,6 +1,6 @@
 <?php 
 
-echo "ENTRO A AGREGAR USUARIOS CONTROLLER";
+echo "ENTRO A AGREGAR USUARIOS CONTROLLER \n";
 
 require_once("../Models/db.php");
 require_once("../Models/Usuario.php");
@@ -45,6 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //header("Location: http://localhost/proyecto/Views/php/registrarse/");
-    header("Location: http://localhost/PROYECTO/index.php");
+    header("Location: http://localhost/PROYECTO/Views/php/login.php");
     exit();
 }

@@ -1,6 +1,6 @@
 <?php 
 
-echo "ENTRO A AGREGAR COMENTARIO CONTROLLER";
+echo "ENTRO A AGREGAR COMENTARIO CONTROLLER \n";
 
 require_once("../Models/db.php");
 require_once("../Models/Usuario.php");

@@ -1,6 +1,6 @@
 <?php 
 
-echo "ENTRO A AGREGAR IMAGEN CONTROLLER";
+echo "ENTRO A AGREGAR IMAGEN CONTROLLER \n";
 
 require_once("../Models/db.php");
 require_once("../Models/Usuario.php");

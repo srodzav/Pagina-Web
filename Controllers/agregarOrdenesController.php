@@ -1,6 +1,6 @@
 <?php 
 
-echo "ENTRO A AGREGAR ORDENES CONTROLLER";
+echo "ENTRO A AGREGAR ORDENES CONTROLLER \n";
 
 require_once("../Models/db.php");
 require_once("../Models/Usuario.php");
@@ -27,12 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombre = $_POST['nombre'][$i];
         $cantidad = $_POST['cantidad'][$i];
         $precio = $_POST['precio'][$i];
+        $usuario = $_POST['usuario'][$i];
 
-        $sql = 'INSERT INTO ordenes(nombre,cantidad,precio) VALUES(:nombre, :cantidad, :precio)';
+        $sql = 'INSERT INTO ordenes(nombre,cantidad,precio,usuario) VALUES(:nombre, :cantidad, :precio, :usuario)';
         $query = $connection->prepare($sql);
         $query->bindParam(':nombre', $nombre, PDO::PARAM_STR);
         $query->bindParam(':cantidad', $cantidad, PDO::PARAM_STR);
         $query->bindParam(':precio', $precio, PDO::PARAM_STR);
+        $query->bindParam(':usuario', $usuario, PDO::PARAM_STR);
         $query->execute();
     }
     $rowCount = $query->rowCount();

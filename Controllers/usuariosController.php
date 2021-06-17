@@ -1,6 +1,6 @@
 <?php 
 
-echo "ENTRO A USUARIOS CONTROLLER";
+echo "ENTRO A USUARIOS CONTROLLER \n";
 
 require_once("/PROYECTO/Models/db.php");
 require_once("/PROYECTO/Models/Usuario.php");
