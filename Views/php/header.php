@@ -1,3 +1,4 @@
+<!-- <?php error_reporting(0); ?> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="navbar flex" id="responsive-pc">
@@ -26,6 +27,12 @@
                 ?> <a href="/PROYECTO/Views/php/login.php?cerrar_sesion">Cerrar Sesion</a> <?php
             }
         ?>
+        <?php 
+        $varsesion = $_SESSION['usuario'];
+        if(!($varsesion == NULL || $varsesion == '')) { ?>
+            <p class="user"> <img width="20px" height="20px" src="/PROYECTO/Views/images/user.png"> <?php echo $_SESSION['usuario'] ?> </p>
+            <?php 
+        } ?>
     </div>
 </div>
 
@@ -61,6 +68,12 @@
                     ?> <a href="/PROYECTO/Views/php/login.php?cerrar_sesion">Cerrar Sesion</a> <?php
                 }
             ?>
+            <?php 
+            $varsesion = $_SESSION['usuario'];
+            if(!($varsesion == NULL || $varsesion == '')) { ?>
+                <a> <img width="40px" height="40px" src="/PROYECTO/Views/images/user.png"> <?php echo $_SESSION['usuario'] ?> </a>
+                <?php 
+            } ?>
         </div>
     </div>
 </div>

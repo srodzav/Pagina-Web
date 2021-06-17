@@ -1,10 +1,10 @@
 <?php
     include('../../Models/db.php');
+
     if(!isset($_SESSION)) 
     { 
         session_start(); 
     } 
-
     if(isset($_GET['cerrar_sesion'])){
         session_unset();
         session_destroy();
@@ -20,36 +20,36 @@
             default:
         }
     }
-    if(isset($_POST['email']) && isset($_POST['password'])){
-        $email = $_POST['email'];
-        $contrasena = $_POST['password'];
+    // if(isset($_POST['email']) && isset($_POST['password'])){
+    //     $email = $_POST['email'];
+    //     $contrasena = $_POST['password'];
 
-        $db = new DB();
-        $query = $db->getConnection()->prepare('SELECT * FROM usuarios WHERE email = :email AND contrasena = :contrasena');
-        $query->execute(['email' => $email, 'contrasena' => $contrasena]);
+    //     $db = new DB();
+    //     $query = $db->getConnection()->prepare('SELECT * FROM usuarios WHERE email = :email AND contrasena = :contrasena');
+    //     $query->execute(['email' => $email, 'contrasena' => $contrasena]);
 
-        $row = $query->fetch(PDO::FETCH_NUM);
+    //     $row = $query->fetch(PDO::FETCH_NUM);
 
-        if($row == true){
-            $rol = $row[3];
-            $_SESSION['rol'] = $rol;
+    //     if($row == true){
+    //         $rol = $row[3];
+    //         $_SESSION['rol'] = $rol;
 
-            switch($_SESSION['rol']){
-                case 1:
-                    header('location: /PROYECTO/Views/php/admin.php');
-                    break;
-                case 2:
-                    header('location: /PROYECTO/index.php');
-                    break;
-                default:
-            }
-        } else {
-            echo
-                '<script>
-                alert("Usuario o contraseña incorrecto");
-                </script>';
-        }
-    }
+    //         switch($_SESSION['rol']){
+    //             case 1:
+    //                 header('location: /PROYECTO/Views/php/admin.php');
+    //                 break;
+    //             case 2:
+    //                 header('location: /PROYECTO/index.php');
+    //                 break;
+    //             default:
+    //         }
+    //     } else {
+    //         echo
+    //             '<script>
+    //             alert("Usuario o contraseña incorrecto");
+    //             </script>';
+    //     }
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +74,7 @@
     
     <!-- PARA LOGEARSE -->
     <div class="formulario">
-        <form method="POST" id="form_login" action="#"> 
+        <form method="POST" id="form_login" action="sesiones.php"> 
             <div class="container">
                 <label for="email"><b>Email</b></label>
                 <input type="text" placeholder="elpanal@correo.com" name="email" id="email" autocomplete="off" required>

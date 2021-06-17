@@ -5,6 +5,7 @@
     $usuarios = "SELECT * FROM usuarios";
 
     session_start();
+
     if(!isset($_SESSION['rol'])){
         header('location: login.php');
     }else{
@@ -44,6 +45,7 @@
 
     <div>
         <h1 style="text-align: center;"> Panel de Administración </h1>
+        <h2 style="text-align: center;"> Bienvenido: <?php echo $_SESSION['usuario'] ?> </h2>
     </div>
     <hr style="width:100%;text-align:left;margin-left:0">
     <br>
@@ -74,14 +76,14 @@
                                 echo "Usuario";
                         ?>
                     </td>
-
-                    <td> 
-                        <form method="POST" id="form_eliminar_<?php echo $row['id']; ?>" action="/proyecto/Views/php/admin.php">
-                            <input type="hidden" name="eliminar" value="<?php echo $row['id']; ?> "> 
-                            <input type="submit" value="X"> 
-                        </form>
-                    </td>
-
+                    <?php if($cont < 10){ ?>
+                        <td> 
+                            <form method="POST" id="form_eliminar_<?php echo $row['id']; ?>" action="/proyecto/Views/php/admin.php">
+                                <input type="hidden" name="eliminar" value="<?php echo $row['id']; ?> "> 
+                                <input type="submit" value="X"> 
+                            </form>
+                        </td>
+                    <?php } ?>
                 </tr>
             <?php } mysqli_free_result($resultado); ?>
         </table>
@@ -120,25 +122,29 @@
         <div class="tabla-pedidos">
             <table >
                 <tr>
-                    <th>N° Pedido</th>
-                    <th>Platillo</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
+                    <th style="width=25%; text-align: center;">N° Pedido</th>
+                    <th style="width=25%; text-align: center;">Platillo</th>
+                    <th style="width=25%; text-align: center;">Cantidad</th>
+                    <th style="width=25%; text-align: center;">Precio</th>
+                    <th style="width=25%; text-align: center;">¿Quien lo pidió?</th>
                 </tr>
 
-                <?php $resultado = mysqli_query($connection, $compras); 
+                <?php $resultado = mysqli_query($connection, $compras); $cont = 0;
 
                 while($row=mysqli_fetch_assoc($resultado))
                 { ?>
-                    <tr>
-                        <td> <?php echo $row["id"] ?> </td>
-                        <td> <?php echo $row["nombre"] ?> </td>
-                        <td> <?php echo $row["cantidad"]?> </td>
-                        <td> $<?php echo $row["precio"]?> </td>
-                        
-                    </tr>
-                <?php } mysqli_free_result($resultado); ?>
+                    <?php if($cont < 15){ ?>
+                        <tr>
+                            <td style="text-align: center;"> <?php echo $row["id"] ?> </td>
+                            <td> <?php echo $row["nombre"] ?> </td>
+                            <td style="text-align: center;"> <?php echo $row["cantidad"]?> </td>
+                            <td style="text-align: center;"> $<?php echo $row["precio"]?> </td>
+                            <td> <?php echo $row["usuario"]?> </td>
+                        </tr>
+                    <?php } ?>
+                <?php $cont++; } mysqli_free_result($resultado); ?>
             </table>
+            <br><br><br><br>
         </div>
     </div>
 </body>
