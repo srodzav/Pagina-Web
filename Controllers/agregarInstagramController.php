@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         header("Location: http://localhost/PROYECTO/index.php/?error=No se pudo registrar el usuario");
                         exit();
                     }
-                    header("Location: http://localhost/PROYECTO/Views/php/galeria.php");
+                    header("Location: http://localhost/PROYECTO/Views/cli/admin_galeria.php");
                     exit();
                 }
             } else {

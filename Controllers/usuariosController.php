@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $json_string = file_get_contents('php://input');
     $json_obj = json_decode($json_string);
 
-    //var_dump($json_obj);
     
     if ($json_obj->email == null || $json_obj->email == "") {
         

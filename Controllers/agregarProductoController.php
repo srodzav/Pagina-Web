@@ -60,6 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    header("Location: http://localhost/PROYECTO/Views/php/menu.php");
+    header("Location: http://localhost/PROYECTO/Views/cli/admin_menu.php");
     exit();
 }

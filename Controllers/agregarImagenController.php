@@ -24,8 +24,6 @@ catch(PDOException $e) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //var_dump($_FILES["file"]);
-
     $directorio = "uploads/";
     $archivo = $directorio . basename($_FILES["file"]["name"]);
 
@@ -59,37 +57,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Favor de seleccionar una imagen";
     }
 }
-
-
-
-
-
-
-// $statusMsg = '';
-// $targetDir = "uploads/";
-
-// if(isset($_POST['submit']) && $_FILES['file']['name'] != NULL){
-//     $fileName = basename($_FILES['file']['name']);
-//     $targetFilePath = $targetDir . $fileName;
-//     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-
-//     $allowTypes = array('jpg','png','jpeg','gif','pdf');
-//     if(in_array($fileType, $allowTypes)){
-//         if(move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)){
-//             $insert = $connection->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
-//             if($insert){
-//                 $statusMsg = "El archivo ".$fileName. " ha sido subido con extido.";
-//             }else{
-//                 $statusMsg = "El archivo no se subió, intente de nuevo.";
-//             } 
-//         }else{
-//             $statusMsg = "Hubo un error al subir el archivo.";
-//         }
-//     }else{
-//         $statusMsg = 'Solo se aceptan JPG, JPEG, PNG, GIF, & PDF.';
-//     }
-// }else{
-//     $statusMsg = 'Selecciona un archivo para subir.';
-// }
-
-// echo $statusMsg;

@@ -67,6 +67,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    header("Location: http://localhost/PROYECTO/Views/php/promos.php");
+    header("Location: http://localhost/PROYECTO/Views/cli/admin_promos.php");
     exit();
 }
