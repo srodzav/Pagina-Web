@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     $connection = mysqli_connect('localhost', 'root', 'qwert', 'panal_db');
     mysqli_set_charset($connection, "utf8");
 
